@@ -28,7 +28,6 @@ import static android.content.pm.PackageManager.DONT_KILL_APP;
 import static android.content.pm.PackageManager.GET_ACTIVITIES;
 import static android.content.pm.PackageManager.GET_RECEIVERS;
 import static android.content.pm.PackageManager.GET_SERVICES;
-import static android.content.res.ThemeConfig.SYSTEM_DEFAULT;
 
 import static com.cyanogenmod.setupwizard.SetupWizardApp.KEY_DETECT_CAPTIVE_PORTAL;
 import static com.cyanogenmod.setupwizard.SetupWizardApp.LOGV;
@@ -62,19 +61,15 @@ import com.cyanogenmod.setupwizard.SimMissingActivity;
 import com.cyanogenmod.setupwizard.WifiSetupActivity;
 import com.cyanogenmod.setupwizard.wizardmanager.WizardManager;
 
-import org.cyanogenmod.internal.util.PackageManagerUtils;
-
 import java.util.ArrayList;
 import java.util.List;
-
-import cyanogenmod.providers.CMSettings;
 
 public class SetupWizardUtils {
 
     private static final String TAG = SetupWizardUtils.class.getSimpleName();
 
     private static final String GMS_PACKAGE = "com.google.android.gms";
-    private static final String GMS_SUW_PACKAGE = "com.google.android.setupwizard";
+    private static int uid = -1;
 
     private SetupWizardUtils(){}
 
@@ -168,28 +163,17 @@ public class SetupWizardUtils {
         }
     }
 
-    public static boolean hasGMS(Context context) {
-        if (PackageManagerUtils.isAppInstalled(context, GMS_PACKAGE) &&
-                PackageManagerUtils.isAppInstalled(context, GMS_SUW_PACKAGE)) {
-            PackageManager packageManager = context.getPackageManager();
-            if (LOGV) {
-                Log.v(TAG, GMS_SUW_PACKAGE + " state = " +
-                        packageManager.getApplicationEnabledSetting(GMS_SUW_PACKAGE));
+    public static boolean hasGMS(final Context context) {
+        if (uid == -1) {
+            PackageManager pm = context.getPackageManager();
+            try {
+                uid = pm.getPackageUidAsUser(GMS_PACKAGE,
+                        PackageManager.MATCH_SYSTEM_ONLY, UserHandle.USER_SYSTEM);
+            } catch (PackageManager.NameNotFoundException ignore) {
+                uid = -2;
             }
-            return packageManager.getApplicationEnabledSetting(GMS_SUW_PACKAGE) !=
-                    COMPONENT_ENABLED_STATE_DISABLED;
         }
-        return false;
-    }
-
-    public static boolean isPackageInstalled(Context context, String packageName) {
-        PackageManager pm = context.getPackageManager();
-        try {
-            pm.getPackageInfo(packageName, GET_ACTIVITIES);
-            return true;
-        } catch (PackageManager.NameNotFoundException e) {
-            return false;
-        }
+        return uid > -1;
     }
 
     public static void finishSetupWizard(Context context) {
@@ -216,24 +200,6 @@ public class SetupWizardUtils {
         FingerprintManager fingerprintManager = (FingerprintManager)
                 context.getSystemService(Context.FINGERPRINT_SERVICE);
         return fingerprintManager.isHardwareDetected();
-    }
-
-    public static String getDefaultThemePackageName(Context context) {
-        final String defaultThemePkg = CMSettings.Secure.getString(context.getContentResolver(),
-                CMSettings.Secure.DEFAULT_THEME_PACKAGE);
-        if (!TextUtils.isEmpty(defaultThemePkg)) {
-            PackageManager pm = context.getPackageManager();
-            try {
-                if (pm.getPackageInfo(defaultThemePkg, 0) != null) {
-                    return defaultThemePkg;
-                }
-            } catch (PackageManager.NameNotFoundException e) {
-                // doesn't exist so system will be default
-                Log.w(TAG, "Default theme " + defaultThemePkg + " not found");
-            }
-        }
-
-        return SYSTEM_DEFAULT;
     }
 
     public static void disableComponentsForMissingFeatures(Context context) {

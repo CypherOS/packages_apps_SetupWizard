@@ -31,7 +31,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
-import android.content.res.ThemeConfig;
 import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.os.Bundle;
@@ -50,12 +49,7 @@ import com.android.setupwizardlib.util.WizardManagerHelper;
 import com.cyanogenmod.setupwizard.util.EnableAccessibilityController;
 import com.cyanogenmod.setupwizard.util.SetupWizardUtils;
 
-import cyanogenmod.hardware.CMHardwareManager;
-import cyanogenmod.providers.CMSettings;
-import cyanogenmod.themes.ThemeManager;
-
-public class FinishActivity extends BaseSetupWizardActivity
-        implements ThemeManager.ThemeChangeListener {
+public class FinishActivity extends BaseSetupWizardActivity {
 
     public static final String TAG = FinishActivity.class.getSimpleName();
 
@@ -122,16 +116,9 @@ public class FinishActivity extends BaseSetupWizardActivity
         mFinishingProgressBar.setVisibility(View.VISIBLE);
         mFinishingProgressBar.setIndeterminate(true);
         mFinishingProgressBar.startAnimation(fadeIn);
-        final ThemeManager tm = ThemeManager.getInstance(this);
-        try {
-            tm.registerThemeChangeListener(this);
-        } catch (Exception e) {
-            Log.w(TAG, "ThemeChangeListener already registered");
-        }
-        handleDefaultThemeSetup(this);
+        this.finishSetup();
     }
 
-    @Override
     public void onFinish(boolean isSuccess) {
         if (isResumed()) {
             mHandler.post(new Runnable() {
@@ -143,7 +130,6 @@ public class FinishActivity extends BaseSetupWizardActivity
         }
     }
 
-    @Override
     public void onProgress(int progress) {
         if (progress > 0) {
             mFinishingProgressBar.setIndeterminate(false);
@@ -215,11 +201,6 @@ public class FinishActivity extends BaseSetupWizardActivity
         if (mEnableAccessibilityController != null) {
             mEnableAccessibilityController.onDestroy();
         }
-        handlePrivacyGuard(mSetupWizardApp);
-        handleEnableMetrics(mSetupWizardApp);
-        handleNavKeys(mSetupWizardApp);
-        final ThemeManager tm = ThemeManager.getInstance(mSetupWizardApp);
-        tm.unregisterThemeChangeListener(this);
         final WallpaperManager wallpaperManager =
                 WallpaperManager.getInstance(mSetupWizardApp);
         wallpaperManager.forgetLoadedWallpaper();
@@ -227,66 +208,5 @@ public class FinishActivity extends BaseSetupWizardActivity
         Intent intent = WizardManagerHelper.getNextIntent(getIntent(),
                 Activity.RESULT_OK);
         startActivityForResult(intent, NEXT_REQUEST);
-    }
-
-    private static void handleEnableMetrics(SetupWizardApp setupWizardApp) {
-        Bundle privacyData = setupWizardApp.getSettingsBundle();
-        if (privacyData != null
-                && privacyData.containsKey(KEY_SEND_METRICS)) {
-            CMSettings.Secure.putInt(setupWizardApp.getContentResolver(),
-                    CMSettings.Secure.STATS_COLLECTION, privacyData.getBoolean(KEY_SEND_METRICS)
-                            ? 1 : 0);
-        }
-    }
-
-    private static void handleDefaultThemeSetup(FinishActivity finishActivity) {
-        Bundle privacyData = finishActivity.mSetupWizardApp.getSettingsBundle();
-        if (!SetupWizardUtils.getDefaultThemePackageName(finishActivity.mSetupWizardApp)
-                .equals(ThemeConfig.SYSTEM_DEFAULT) && privacyData != null &&
-                privacyData.getBoolean(KEY_APPLY_DEFAULT_THEME)) {
-            Log.i(TAG, "Applying default theme");
-            final ThemeManager tm = ThemeManager.getInstance(finishActivity.mSetupWizardApp);
-            tm.applyDefaultTheme();
-        } else {
-            finishActivity.finishSetup();
-        }
-    }
-
-    private static void handlePrivacyGuard(SetupWizardApp setupWizardApp) {
-        Bundle mPrivacyData = setupWizardApp.getSettingsBundle();
-        if (mPrivacyData != null && mPrivacyData.containsKey(KEY_PRIVACY_GUARD)) {
-            CMSettings.Secure.putInt(setupWizardApp.getContentResolver(),
-                    CMSettings.Secure.PRIVACY_GUARD_DEFAULT,
-                    mPrivacyData.getBoolean(KEY_PRIVACY_GUARD) ? 1 : 0);
-        }
-    }
-
-    private static void handleNavKeys(SetupWizardApp setupWizardApp) {
-        if (setupWizardApp.getSettingsBundle().containsKey(DISABLE_NAV_KEYS)) {
-            writeDisableNavkeysOption(setupWizardApp,
-                    setupWizardApp.getSettingsBundle().getBoolean(DISABLE_NAV_KEYS));
-        }
-    }
-
-    private static void writeDisableNavkeysOption(Context context, boolean enabled) {
-        final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-
-        CMSettings.Global.putInt(context.getContentResolver(),
-                CMSettings.Global.DEV_FORCE_SHOW_NAVBAR, enabled ? 1 : 0);
-        CMHardwareManager hardware = CMHardwareManager.getInstance(context);
-        hardware.set(CMHardwareManager.FEATURE_KEY_DISABLE, enabled);
-
-        /* Save/restore button timeouts to disable them in softkey mode */
-        if (enabled) {
-            CMSettings.Secure.putInt(context.getContentResolver(),
-                    CMSettings.Secure.BUTTON_BRIGHTNESS, 0);
-        } else {
-            int currentBrightness = CMSettings.Secure.getInt(context.getContentResolver(),
-                    CMSettings.Secure.BUTTON_BRIGHTNESS, 100);
-            int oldBright = prefs.getInt(KEY_BUTTON_BACKLIGHT,
-                    currentBrightness);
-            CMSettings.Secure.putInt(context.getContentResolver(),
-                    CMSettings.Secure.BUTTON_BRIGHTNESS, oldBright);
-        }
     }
 }

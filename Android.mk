@@ -15,9 +15,7 @@ LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 LOCAL_STATIC_JAVA_LIBRARIES := \
     android-support-v4 \
     android-support-v13 \
-    libphonenumber \
-    org.cyanogenmod.platform.internal \
-    org.cyanogenmod.platform.sdk
+    libphonenumber
 
 LOCAL_JAVA_LIBRARIES := \
     telephony-common
