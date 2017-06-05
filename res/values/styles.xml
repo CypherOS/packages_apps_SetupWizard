@@ -43,11 +43,11 @@
 
     <style name="PageContainer">
         <item name="android:textColor">@color/primary_text</item>
-        <item name="android:background">@color/page_background</item>
+        <item name="android:background">@color/white</item>
     </style>
 
     <style name="PageContent">
-        <item name="android:background">@color/page_background</item>
+        <item name="android:background">@color/white</item>
         <item name="android:paddingTop">@dimen/content_margin_top</item>
     </style>
 
