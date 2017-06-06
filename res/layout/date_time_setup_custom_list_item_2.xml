@@ -36,6 +36,5 @@
         android:minHeight="10dip"
         android:layout_below="@android:id/text1"
         android:layout_alignStart="@android:id/text1"
-        android:fontFamily="sans-serif-medium"
         style="@style/SpinnerItem" />
 </TwoLineListItem>

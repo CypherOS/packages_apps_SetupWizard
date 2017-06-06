@@ -137,7 +137,7 @@ public class CaptivePortalSetupActivity extends SubBaseActivity {
                 intent.putExtra("action_bar_color", context.getResources().getColor(
                         R.color.primary_dark));
                 intent.putExtra("progress_bar_color", context.getResources().getColor(
-                        R.color.accent));
+                        R.color.color_accent));
                 captivePortalSetupActivity.startSubactivity(intent, REQUEST_CODE_SETUP_CAPTIVE_PORTAL);
             } else {
                 captivePortalSetupActivity.finishAction(RESULT_OK);

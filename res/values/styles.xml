@@ -15,40 +15,81 @@
      limitations under the License.
 -->
 <resources>
-    <style name="Theme.Setup" parent="@android:style/Theme.Material.Light">
-        <item name="android:windowActionBar">false</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowIsTranslucent">true</item>
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:colorPrimary">@color/primary</item>
-        <item name="android:colorPrimaryDark">@color/primary</item>
-        <item name="android:colorAccent">@color/accent</item>
-        <item name="android:textColorLink">@color/accent</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:windowAnimationStyle">@style/ActivityAnimations</item>
-        <item name="android:windowLightStatusBar">true</item>
+    
+    <style name="Theme.Glif.Light" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:colorAccent">@color/color_accent</item>
+        <item name="android:colorPrimary">@color/color_primary</item>
+        <item name="android:indeterminateTint">?android:attr/colorPrimary</item>
+        <!-- Specify the indeterminateTintMode to work around a bug in Lollipop -->
+        <item name="android:indeterminateTintMode">src_in</item>
+        <item name="android:listPreferredItemHeight">@dimen/items_preferred_height</item>
+        <item name="android:listPreferredItemPaddingEnd">?attr/suwMarginSides</item>
+        <item name="android:listPreferredItemPaddingStart">?attr/suwMarginSides</item>
+        <item name="android:navigationBarColor">@android:color/black</item>
+        <item name="android:statusBarColor">?android:attr/colorPrimary</item>
+        <item name="android:textAppearanceListItem">@style/TextAppearance.ItemTitle</item>
+        <item name="android:textAppearanceListItemSmall">@style/TextAppearance.ItemSummary</item>
+        <item name="android:textColorLink">@color/color_link</item>
+        <item name="android:windowAnimationStyle">@style/Animation.WindowAnimation</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+
+        <item name="suwItemDescriptionStyle">@style/ItemContainer.Description.Glif</item>
+        <item name="suwListItemIconColor">@color/list_item_icon_color</item>
+        <item name="suwMarginSides">@dimen/suw_glif_margin_sides</item>
+    </style>
+    
+    <style name="Theme.Setup" parent="Theme.Glif.Light">
         <item name="localePickerStyle">@style/LocaleWidget.Material.LocalePicker</item>
     </style>
+    
+    <style name="TextAppearance.ItemTitle" parent="android:TextAppearance">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
 
-    <style name="ActivityAnimations" parent="@android:style/Animation.Activity">
-        <item name="android:activityOpenEnterAnimation">@anim/translucent_enter</item>
-        <item name="android:activityOpenExitAnimation">@anim/translucent_exit</item>
-        <item name="android:activityCloseEnterAnimation">@anim/translucent_enter</item>
-        <item name="android:activityCloseExitAnimation">@anim/translucent_exit</item>
-        <item name="android:taskToFrontEnterAnimation">@anim/translucent_enter</item>
-        <item name="android:taskToFrontExitAnimation">@anim/translucent_exit</item>
-        <item name="android:taskToBackEnterAnimation">@anim/translucent_enter</item>
-        <item name="android:taskToBackExitAnimation">@anim/translucent_exit</item>
+    <style name="TextAppearance.ItemSummary" parent="android:TextAppearance">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+    </style>
+    
+    <style name="Animation.WindowAnimation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/suw_slide_next_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/suw_slide_next_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/suw_slide_back_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/suw_slide_back_out</item>
+    </style>
+    
+    <style name="ItemContainer">
+        <item name="android:minHeight">?android:attr/listPreferredItemHeight</item>
+        <item name="android:paddingBottom">@dimen/items_padding_vertical</item>
+        <item name="android:paddingEnd">?attr/listPreferredItemPaddingRight</item>
+        <item name="android:paddingLeft">?attr/listPreferredItemPaddingLeft</item>
+        <item name="android:paddingRight">?attr/listPreferredItemPaddingRight</item>
+        <item name="android:paddingStart">?attr/listPreferredItemPaddingLeft</item>
+        <item name="android:paddingTop">@dimen/items_padding_vertical</item>
+        <item name="listPreferredItemPaddingLeft">?attr/suwMarginSides</item>
+        <item name="listPreferredItemPaddingRight">?attr/suwMarginSides</item>
+    </style>
+    
+    <style name="ItemContainer.Description" parent="ItemContainer">
+        <item name="android:paddingTop">@dimen/suw_description_glif_margin_top</item>
+        <item name="android:paddingBottom">@dimen/suw_description_glif_margin_bottom_lists</item>
+    </style>
+    
+    <style name="ItemContainer.Description.Glif" parent="ItemContainer.Description">
+        <item name="android:minHeight">0dp</item>
+        <item name="android:paddingTop">@dimen/suw_description_glif_margin_top</item>
+        <item name="android:paddingBottom">@dimen/suw_description_glif_margin_bottom_lists</item>
     </style>
 
     <style name="PageContainer">
         <item name="android:textColor">@color/primary_text</item>
-        <item name="android:background">@color/page_background</item>
+        <item name="android:background">@color/white</item>
     </style>
 
     <style name="PageContent">
-        <item name="android:background">@color/page_background</item>
-        <item name="android:paddingTop">@dimen/content_margin_top</item>
+        <item name="android:background">@color/white</item>
     </style>
 
     <style name="PageTitle">
@@ -64,7 +105,7 @@
 
     <style name="SpinnerItem">
         <item name="android:textSize">15sp</item>
-        <item name="android:paddingLeft">@dimen/content_margin_left</item>
+        <item name="android:paddingLeft">@dimen/suw_glif_margin_sides</item>
     </style>
 
     <style name="ButtonBar" parent="@android:style/Widget.Material.ActionButton">
@@ -75,7 +116,6 @@
         <item name="android:minWidth">15dp</item>
         <item name="android:minHeight">15dp</item>
         <item name="android:textColor">@color/button_bar_text</item>
-        <item name="android:fontFamily">sans-serif</item>
         <item name="android:drawablePadding">6dp</item>
         <item name="android:ellipsize">end</item>
     </style>

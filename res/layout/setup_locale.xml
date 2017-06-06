@@ -20,7 +20,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/primary">
+    android:background="@color/white">
 
     <include layout="@layout/header_condensed" />
 
@@ -28,8 +28,8 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:paddingLeft="@dimen/content_margin_left"
-                    android:paddingRight="@dimen/content_margin_left">
+                    android:paddingLeft="@dimen/suw_glif_margin_sides"
+                    android:paddingRight="@dimen/suw_glif_margin_sides">
 
         <co.aoscp.setupwizard.widget.LocalePicker
             android:id="@+id/locale_list"

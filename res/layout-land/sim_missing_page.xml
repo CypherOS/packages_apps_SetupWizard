@@ -40,8 +40,8 @@
                 style="@style/PageSummaryText"
                 android:textSize="15sp"
                 android:layout_marginBottom="@dimen/summary_margin_bottom"
-                android:paddingLeft="@dimen/content_margin_left"
-                android:paddingRight="@dimen/content_margin_right"
+                android:paddingLeft="@dimen/suw_glif_margin_sides"
+                android:paddingRight="@dimen/suw_glif_margin_sides"
                 android:text="@string/sim_missing_summary" />
 
             <ImageView

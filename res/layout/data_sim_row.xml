@@ -20,7 +20,7 @@
               android:layout_height="wrap_content"
               android:minHeight="?android:attr/listPreferredItemHeight"
               android:gravity="center_vertical"
-              android:paddingLeft="@dimen/content_margin_left"
+              android:paddingLeft="@dimen/suw_glif_margin_sides"
               android:paddingRight="@dimen/data_switch_margin_right"
               android:background="?android:attr/selectableItemBackground"
               android:clickable="true">

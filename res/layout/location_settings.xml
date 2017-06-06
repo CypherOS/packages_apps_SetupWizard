@@ -19,7 +19,7 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="@color/primary">
+              android:background="@color/white">
 
     <include layout="@layout/header_condensed" />
 
@@ -36,6 +36,8 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/suw_glif_margin_sides"
+                android:layout_marginRight="@dimen/suw_glif_margin_sides"
                 style="@style/PageContent">
 
                 <TextView
@@ -43,8 +45,6 @@
                     android:layout_height="wrap_content"
                     android:textSize="15sp"
                     android:layout_marginBottom="@dimen/summary_margin_bottom"
-                    android:paddingLeft="@dimen/content_margin_left"
-                    android:paddingRight="@dimen/content_margin_right"
                     style="@style/PageSummaryText" />
 
                 <LinearLayout
@@ -52,8 +52,6 @@
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="@dimen/location_margin_left"
-                    android:paddingRight="@dimen/content_margin_right"
                     android:background="?android:attr/selectableItemBackground"
                     android:clickable="true">
 
@@ -75,8 +73,8 @@
                         android:textSize="15sp"
                         android:lineSpacingExtra="@dimen/setup_line_spacing"
                         android:gravity="top"
-                        android:layout_marginLeft="@dimen/location_text_margin_left"
-                        android:layout_marginRight="@dimen/location_text_margin_right"
+                        android:layout_marginLeft="@dimen/suw_glif_margin_sides"
+                        android:layout_marginRight="@dimen/suw_glif_margin_sides"
                         android:paddingBottom="@dimen/content_margin_bottom"
                         android:text="@string/location_access_summary"
                         android:maxLines="5" />
@@ -88,8 +86,6 @@
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="@dimen/location_margin_left"
-                    android:paddingRight="@dimen/content_margin_right"
                     android:background="?android:attr/selectableItemBackground"
                     android:clickable="true">
 
@@ -111,8 +107,8 @@
                         android:textSize="15sp"
                         android:lineSpacingExtra="@dimen/setup_line_spacing"
                         android:gravity="top"
-                        android:layout_marginLeft="@dimen/location_text_margin_left"
-                        android:layout_marginRight="@dimen/location_text_margin_right"
+                        android:layout_marginLeft="@dimen/suw_glif_margin_sides"
+                        android:layout_marginRight="@dimen/suw_glif_margin_sides"
                         android:paddingBottom="@dimen/content_margin_bottom"
                         android:text="@string/location_battery_saving"
                         android:maxLines="5" />
@@ -124,8 +120,6 @@
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="@dimen/location_margin_left"
-                    android:paddingRight="@dimen/content_margin_right"
                     android:background="?android:attr/selectableItemBackground"
                     android:clickable="true">
 
@@ -146,8 +140,8 @@
                         android:textSize="15sp"
                         android:lineSpacingExtra="@dimen/setup_line_spacing"
                         android:gravity="top"
-                        android:layout_marginLeft="@dimen/location_text_margin_left"
-                        android:layout_marginRight="@dimen/location_text_margin_right"
+                        android:layout_marginLeft="@dimen/suw_glif_margin_sides"
+                        android:layout_marginRight="@dimen/suw_glif_margin_sides"
                         android:paddingBottom="@dimen/content_margin_bottom"
                         android:text="@string/location_network"
                         android:maxLines="5" />

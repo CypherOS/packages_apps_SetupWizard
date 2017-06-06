@@ -19,7 +19,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primary">
+    android:background="@color/white">
 
     <include layout="@layout/header_condensed" />
 
@@ -43,17 +43,17 @@
                     android:layout_height="wrap_content"
                     style="@style/PageSummaryText"
                     android:textSize="16sp"
-                    android:paddingLeft="@dimen/content_margin_left"
+                    android:paddingLeft="@dimen/suw_glif_margin_sides"
                     android:layout_marginBottom="@dimen/summary_margin_bottom"
-                    android:paddingRight="@dimen/location_text_margin_right"
+                    android:paddingRight="@dimen/suw_glif_margin_sides"
                     android:text="@string/fingerprint_setup_summary" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="24dp"
-                    android:paddingLeft="@dimen/content_margin_left"
-                    android:paddingRight="@dimen/location_text_margin_right"
+                    android:paddingLeft="@dimen/suw_glif_margin_sides"
+                    android:paddingRight="@dimen/suw_glif_margin_sides"
                     android:drawableStart="@drawable/ic_check_mark"
                     android:drawablePadding="24dp"
                     android:gravity="center_vertical"
@@ -65,8 +65,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="24dp"
-                    android:paddingLeft="@dimen/content_margin_left"
-                    android:paddingRight="@dimen/location_text_margin_right"
+                    android:paddingLeft="@dimen/suw_glif_margin_sides"
+                    android:paddingRight="@dimen/suw_glif_margin_sides"
                     android:drawableStart="@drawable/ic_check_mark"
                     android:drawablePadding="24dp"
                     android:gravity="center_vertical"
@@ -78,12 +78,12 @@
                     android:id="@+id/setup_fingerprint"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="@dimen/content_margin_left"
-                    android:paddingRight="@dimen/location_text_margin_right"
+                    android:paddingLeft="@dimen/suw_glif_margin_sides"
+                    android:paddingRight="@dimen/suw_glif_margin_sides"
                     android:gravity="center_vertical"
                     android:textSize="16sp"
                     android:textAllCaps="true"
-                    android:textColor="@color/fingerprint_setup_text_color"
+                    android:textColor="@color/color_accent"
                     android:text="@string/fingerprint_setup_screen_lock_setup"/>
 
             </LinearLayout>
