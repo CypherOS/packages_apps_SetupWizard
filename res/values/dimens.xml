@@ -15,6 +15,14 @@
      limitations under the License.
 -->
 <resources>
+    <!-- Header -->
+    <dimen name="suw_glif_header_title_margin_top">15dp</dimen>
+    <dimen name="suw_glif_header_title_margin_bottom">2dp</dimen>
+    <dimen name="suw_glif_icon_max_height">32dp</dimen>
+    <dimen name="suw_glif_margin_top">48dp</dimen>
+    <dimen name="suw_header_title_size">24sp</dimen>
+    <dimen name="suw_layout_margin_sides">40dp</dimen>
+
     <dimen name="logo_header_height">244dp</dimen>
     <dimen name="header_height">244dp</dimen>
     <dimen name="header_condensed_height">88dp</dimen>
