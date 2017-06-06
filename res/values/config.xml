@@ -22,5 +22,7 @@
     <bool name="check_custom_theme_by_default">true</bool>
     <string name="wizard_script_uri" translatable="false">android.resource://co.aoscp.setupwizard/raw/wizard_script</string>
     <string name="wizard_script_user_uri" translatable="false">android.resource://co.aoscp.setupwizard/raw/wizard_script_user</string>
-
+	
+	<!-- The duration (in milliseconds) of activity transitions -->
+    <integer name="suwTransitionDuration">300</integer>
 </resources>
