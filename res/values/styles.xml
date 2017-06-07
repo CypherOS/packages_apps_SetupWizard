@@ -113,4 +113,28 @@
     </style>
 
     <style name="NoDisplay" parent="@android:style/Theme.NoDisplay" />
+	
+	<style name="SuwGlifIcon">
+        <item name="android:layout_marginLeft">?suwMarginSides</item>
+        <item name="android:layout_marginTop">@dimen/suw_glif_margin_top</item>
+        <item name="android:layout_marginRight">?suwMarginSides</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:maxHeight">@dimen/suw_glif_icon_max_height</item>
+    </style>
+	
+	<style name="SuwBaseHeaderTitle">
+        <item name="android:textSize">@dimen/suw_header_title_size</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:layout_gravity">top</item>
+        <item name="android:maxLines">2</item>
+    </style>
+	
+	<style name="SuwGlifHeaderTitle" parent="@style/SuwBaseHeaderTitle">
+        <item name="android:textColor">?android:textColorPrimary</item>
+        <item name="android:layout_marginLeft">?suwMarginSides</item>
+        <item name="android:layout_marginTop">@dimen/suw_glif_header_title_margin_top</item>
+        <item name="android:layout_marginRight">?suwMarginSides</item>
+        <item name="android:layout_marginBottom">@dimen/suw_glif_header_title_margin_bottom</item>
+    </style>
 </resources>
