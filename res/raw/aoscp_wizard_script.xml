@@ -25,9 +25,6 @@
     </WizardAction>
 
     <WizardAction wizard:uri="intent:#Intent;action=org.aoscp.setupwizard.AOSCP_WELCOME;end" id="welcome">
-        <result wizard:action="locale" />
-    </WizardAction>
-    <WizardAction wizard:uri="intent:#Intent;action=org.aoscp.setupwizard.AOSCP_LOCALE;end" id="locale">
         <result wizard:action="datetime" />
     </WizardAction>
 

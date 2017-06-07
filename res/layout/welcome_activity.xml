@@ -33,7 +33,28 @@
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
         android:gravity="center"
-        android:padding="@dimen/content_margin_left"/>
+		android:paddingTop="@dimen/content_margin_left"
+        android:paddingLeft="@dimen/content_margin_left"
+        android:paddingRight="@dimen/content_margin_left" />
+		
+	<RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+					android:layout_below="@id/brand_logo"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/content_margin_left"
+                    android:paddingRight="@dimen/content_margin_left">
+
+        <org.aoscp.setupwizard.widget.LocalePicker
+            android:id="@+id/locale_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
 
 
     <fragment android:name="com.android.setupwizard.navigationbar.SetupWizardNavBar"
