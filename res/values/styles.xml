@@ -50,16 +50,33 @@
         <item name="android:background">@color/primary</item>
         <item name="android:paddingTop">@dimen/content_margin_top</item>
     </style>
+	
+	<style name="PageIcon">
+        <item name="android:layout_marginLeft">24dp</item>
+        <item name="android:layout_marginRight">24dp</item>
+        <item name="android:layout_marginTop">40dp</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:maxHeight">32dp</item>
+        <item name="android:scaleType">centerInside</item>
+    </style>
 
     <style name="PageTitle">
         <item name="android:id">@android:id/title</item>
-        <item name="android:textSize">20sp</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:layout_marginLeft">24dp</item>
+        <item name="android:layout_marginRight">24dp</item>
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textStyle">bold</item>
     </style>
 
     <style name="PageSummaryText">
         <item name="android:id">@android:id/summary</item>
         <item name="android:lineSpacingExtra">@dimen/setup_line_spacing</item>
+		<item name="android:textColor">?android:attr/textColorSecondary</item>
+		<item name="android:fontFamily">sans-serif</item>
+		<item name="android:textStyle">normal</item>
     </style>
 
     <style name="SpinnerItem">
@@ -74,6 +91,7 @@
         <item name="android:maxLines">1</item>
         <item name="android:minWidth">15dp</item>
         <item name="android:minHeight">15dp</item>
+		<item name="android:background">@color/primary</item>
         <item name="android:textColor">@color/button_bar_text</item>
         <item name="android:fontFamily">sans-serif</item>
         <item name="android:drawablePadding">6dp</item>

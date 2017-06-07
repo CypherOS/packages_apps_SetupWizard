@@ -58,8 +58,6 @@
                     android:paddingBottom="@dimen/summary_margin_bottom"
                     android:text="@string/enable_mobile_data_summary" />
 
-                <include layout="@layout/divider" />
-
                 <LinearLayout
                     android:id="@+id/data"
                     android:layout_width="match_parent"
@@ -75,7 +73,7 @@
                         android:id="@+id/signal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_signal_0" />
+                        android:src="@drawable/ic_signal_0_mini" />
 
                     <TextView
                         android:id="@+id/enable_data_title"
@@ -97,8 +95,6 @@
                         android:textOff="@string/no"
                         android:textOn="@string/yes"/>
                 </LinearLayout>
-
-                <include layout="@layout/divider" />
 
             </LinearLayout>
         </ScrollView>
