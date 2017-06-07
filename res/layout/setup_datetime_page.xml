@@ -41,11 +41,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/PageSummaryText"
-                    android:textSize="16sp"
-                    android:paddingLeft="@dimen/content_margin_left"
-                    android:layout_marginBottom="@dimen/summary_margin_bottom"
-                    android:paddingRight="@dimen/location_text_margin_right"
+                    style="@style/TextAppearance.ItemSummary"
                     android:text="@string/date_time_summary" />
 
                 <Spinner
