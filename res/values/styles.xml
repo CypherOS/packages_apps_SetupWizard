@@ -91,6 +91,11 @@
         <item name="android:gravity">center_vertical|end</item>
         <item name="android:drawableRight">@drawable/ic_chevron_right_dark</item>
     </style>
+	
+	<style name="Button" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:textColor">@color/white</item>
+        <item name="colorButtonNormal">@color/accent</item>
+    </style>
 
     <style name="LocaleWidget">
         <item name="android:textAppearance">?android:attr/textAppearance</item>
@@ -113,4 +118,25 @@
     </style>
 
     <style name="NoDisplay" parent="@android:style/Theme.NoDisplay" />
+	
+	<attr name="setup_wizard_navbar_bg_color" format="color" />
+    <attr name="setup_wizard_navbar_theme" format="reference" />
+	
+	<style name="setup_wizard_navbar_style">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_height">@dimen/setup_wizard_navbar_height</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:background">?attr/setup_wizard_navbar_bg_color</item>
+        <item name="android:paddingStart">@dimen/setup_wizard_navbar_padding_sides</item>
+        <item name="android:paddingEnd">@dimen/setup_wizard_navbar_padding_sides</item>
+    </style>
+
+    <style name="setup_wizard_navbar_theme_dark">
+        <item name="setup_wizard_navbar_bg_color">@color/setup_wizard_navbar_bg_dark</item>
+    </style>
+
+    <style name="setup_wizard_navbar_theme_light">
+        <item name="setup_wizard_navbar_bg_color">@color/setup_wizard_navbar_bg_light</item>
+    </style>
 </resources>
