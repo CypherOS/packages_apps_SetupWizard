@@ -2,12 +2,12 @@
 
 adb root
 wait ${!}
-adb shell pm enable com.aoscp.setupwizard/com.aoscp.setupwizard.SetupWizardExitActivity || true
+adb shell pm enable org.aoscp.setupwizard/org.aoscp.setupwizard.SetupWizardExitActivity || true
 wait ${!}
 adb shell pm enable com.google.android.setupwizard/com.google.android.setupwizard.SetupWizardExitActivity || true
 wait ${!}
 sleep 1
-adb shell am start com.aoscp.setupwizard/com.aoscp.setupwizard.SetupWizardExitActivity || true
+adb shell am start org.aoscp.setupwizard/org.aoscp.setupwizard.SetupWizardExitActivity || true
 wait ${!}
 sleep 1
 adb shell am start com.google.android.setupwizard/com.google.android.setupwizard.SetupWizardExitActivity
