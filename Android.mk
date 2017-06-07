@@ -15,13 +15,17 @@ LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 LOCAL_STATIC_JAVA_LIBRARIES := \
     android-support-v4 \
     android-support-v13 \
+	android-support-v7-appcompat \
     libphonenumber
 
 LOCAL_JAVA_LIBRARIES := \
     telephony-common
 
-LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res
-LOCAL_AAPT_FLAGS := --auto-add-overlay
+LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res \
+    frameworks/support/v7/appcompat/res
+	
+LOCAL_AAPT_FLAGS := --auto-add-overlay \
+    --extra-packages android.support.v7.appcompat
 
 include frameworks/opt/setupwizard/navigationbar/common.mk
 include frameworks/opt/setupwizard/library/common.mk
