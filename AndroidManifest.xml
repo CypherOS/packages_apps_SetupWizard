@@ -2,6 +2,7 @@
 <!--
      Copyright (C) 2013 The CyanogenMod Project
      Copyright (C) 2017 The LineageOS Project
+	 Copyright (C) 2017 CypherOS
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -17,7 +18,7 @@
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:androidprv="http://schemas.android.com/apk/prv/res/android"
-          package="com.aoscp.setupwizard"
+          package="org.aoscp.setupwizard"
           android:versionCode="5"
           android:sharedUserId="android.uid.system">
 
@@ -38,26 +39,8 @@
     <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS" />
     <uses-permission android:name="android.permission.MANAGE_USERS" />
     <uses-permission android:name="android.permission.CHANGE_COMPONENT_ENABLED_STATE" />
-    <uses-permission android:name="aoscp.permission.ACCESS_THEME_MANAGER"/>
     <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
-    <uses-permission android:name="aoscp.permission.HARDWARE_ABSTRACTION_ACCESS" />
     <uses-permission android:name="android.permission.BACKUP" />
-    <uses-permission android:name="aoscp.permission.FINISH_SETUP" />
-    <uses-permission android:name="aoscp.permission.LEGALESE" />
-    <uses-permission android:name="aoscp.permission.WRITE_SETTINGS"/>
-    <uses-permission android:name="aoscp.permission.WRITE_SECURE_SETTINGS"/>
-
-    <permission
-        android:name="aoscp.permission.PROTECTED_APP"
-        android:protectionLevel="signatureOrSystem" />
-
-    <permission
-        android:name="aoscp.permission.FINISH_SETUP"
-        android:protectionLevel="signatureOrSystem"
-        androidprv:allowViaWhitelist="true" />
-
-    <protected-broadcast android:name="com.aoscp.setupwizard.SETUP_FINISHED"
-                         android:permission="aoscp.permission.FINISH_SETUP"/>
 
     <application android:label="@string/app_name"
                  android:icon="@mipmap/ic_launcher"
@@ -106,7 +89,7 @@
                   android:immersive="true"
                   android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
-                <action android:name="com.aoscp.setupwizard.LINEAGE_BLUETOOTH_SETUP" />
+                <action android:name="aoscp.intent.action.AOSCP_BLUETOOTH_SETUP" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -118,7 +101,7 @@
                   android:immersive="true"
                   android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
-                <action android:name="com.aoscp.setupwizard.LINEAGE_WELCOME" />
+                <action android:name="aoscp.intent.action.AOSCP_WELCOME" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -130,7 +113,7 @@
                   android:immersive="true"
                   android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
-                <action android:name="com.aoscp.setupwizard.LINEAGE_LOCALE" />
+                <action android:name="aoscp.intent.action.AOSCP_LOCALE" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -142,7 +125,7 @@
                   android:immersive="true"
                   android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
-                <action android:name="com.aoscp.setupwizard.LINEAGE_DATETIME" />
+                <action android:name="aoscp.intent.action.AOSCP_DATETIME" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -155,7 +138,7 @@
                   android:exported="false"
                   android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
-                <action android:name="com.aoscp.setupwizard.LINEAGE_WIFI_SETUP" />
+                <action android:name="aoscp.intent.action.AOSCP_WIFI_SETUP" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -168,7 +151,7 @@
                   android:exported="false"
                   android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
-                <action android:name="com.aoscp.setupwizard.LINEAGE_CAPTIVE_PORTAL_SETUP" />
+                <action android:name="aoscp.intent.action.AOSCP_CAPTIVE_PORTAL_SETUP" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -181,7 +164,7 @@
                   android:exported="false"
                   android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
-                <action android:name="com.aoscp.setupwizard.LINEAGE_SIM_MISSING" />
+                <action android:name="aoscp.intent.action.AOSCP_SIM_MISSING" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -194,7 +177,7 @@
                   android:exported="false"
                   android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
-                <action android:name="com.aoscp.setupwizard.LINEAGE_CHOOSE_DATA_SIM" />
+                <action android:name="aoscp.intent.action.AOSCP_CHOOSE_DATA_SIM" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -207,7 +190,7 @@
                   android:exported="false"
                   android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
-                <action android:name="com.aoscp.setupwizard.LINEAGE_ENABLE_MOBILE_DATA" />
+                <action android:name="aoscp.intent.action.AOSCP_ENABLE_MOBILE_DATA" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -220,7 +203,7 @@
                   android:exported="false"
                   android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
-                <action android:name="com.aoscp.setupwizard.LINEAGE_LOCATION_SETTINGS" />
+                <action android:name="aoscp.intent.action.AOSCP_LOCATION_SETTINGS" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -233,7 +216,7 @@
                   android:exported="false"
                   android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
-                <action android:name="com.aoscp.setupwizard.LINEAGE_FINGERPRINT_SETTINGS" />
+                <action android:name="aoscp.intent.action.AOSCP_FINGERPRINT_SETTINGS" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -246,7 +229,7 @@
                   android:exported="false"
                   android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
-                <action android:name="com.aoscp.setupwizard.LINEAGE_LOCKSCREEN_SETTINGS" />
+                <action android:name="aoscp.intent.action.AOSCP_LOCKSCREEN_SETTINGS" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -258,7 +241,7 @@
                   android:immersive="true"
                   android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
-                <action android:name="com.aoscp.setupwizard.LINEAGE_SETUP_COMPLETE" />
+                <action android:name="aoscp.intent.action.AOSCP_SETUP_COMPLETE" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -270,7 +253,7 @@
                   android:label="@@string/activity_label_empty"
                   android:theme="@style/NoDisplay">
             <intent-filter>
-                <action android:name="com.aoscp.setupwizard.EXIT"/>
+                <action android:name="aoscp.intent.action.EXIT"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
