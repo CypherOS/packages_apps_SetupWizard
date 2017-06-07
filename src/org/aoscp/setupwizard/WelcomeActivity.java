@@ -20,6 +20,7 @@ package org.aoscp.setupwizard;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 
 import org.aoscp.setupwizard.util.EnableAccessibilityController;
 
@@ -27,6 +28,7 @@ public class WelcomeActivity extends BaseSetupWizardActivity {
 
     public static final String TAG = WelcomeActivity.class.getSimpleName();
 
+	private Button mButton;
     private View mRootView;
     private EnableAccessibilityController mEnableAccessibilityController;
 
@@ -34,6 +36,8 @@ public class WelcomeActivity extends BaseSetupWizardActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mRootView = findViewById(R.id.root);
+		mButton = (Button) findViewById(R.id.start);
+		mButton.setText(R.string.start);
         setNextText(R.string.next);
         setBackText(R.string.emergency_call);
         setBackDrawable(null);
