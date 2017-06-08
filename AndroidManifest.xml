@@ -17,7 +17,7 @@
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:androidprv="http://schemas.android.com/apk/prv/res/android"
-          package="com.aoscp.setupwizard"
+          package="com.cyanogenmod.setupwizard"
           android:versionCode="5"
           android:sharedUserId="android.uid.system">
 
@@ -38,26 +38,26 @@
     <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS" />
     <uses-permission android:name="android.permission.MANAGE_USERS" />
     <uses-permission android:name="android.permission.CHANGE_COMPONENT_ENABLED_STATE" />
-    <uses-permission android:name="aoscp.permission.ACCESS_THEME_MANAGER"/>
+    <uses-permission android:name="cyanogenmod.permission.ACCESS_THEME_MANAGER"/>
     <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
-    <uses-permission android:name="aoscp.permission.HARDWARE_ABSTRACTION_ACCESS" />
+    <uses-permission android:name="cyanogenmod.permission.HARDWARE_ABSTRACTION_ACCESS" />
     <uses-permission android:name="android.permission.BACKUP" />
-    <uses-permission android:name="aoscp.permission.FINISH_SETUP" />
-    <uses-permission android:name="aoscp.permission.LEGALESE" />
-    <uses-permission android:name="aoscp.permission.WRITE_SETTINGS"/>
-    <uses-permission android:name="aoscp.permission.WRITE_SECURE_SETTINGS"/>
+    <uses-permission android:name="cyanogenmod.permission.FINISH_SETUP" />
+    <uses-permission android:name="cyanogenmod.permission.LEGALESE" />
+    <uses-permission android:name="cyanogenmod.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="cyanogenmod.permission.WRITE_SECURE_SETTINGS"/>
 
     <permission
-        android:name="aoscp.permission.PROTECTED_APP"
+        android:name="cyanogenmod.permission.PROTECTED_APP"
         android:protectionLevel="signatureOrSystem" />
 
     <permission
-        android:name="aoscp.permission.FINISH_SETUP"
+        android:name="cyanogenmod.permission.FINISH_SETUP"
         android:protectionLevel="signatureOrSystem"
         androidprv:allowViaWhitelist="true" />
 
-    <protected-broadcast android:name="com.aoscp.setupwizard.SETUP_FINISHED"
-                         android:permission="aoscp.permission.FINISH_SETUP"/>
+    <protected-broadcast android:name="com.cyanogenmod.setupwizard.SETUP_FINISHED"
+                         android:permission="cyanogenmod.permission.FINISH_SETUP"/>
 
     <application android:label="@string/app_name"
                  android:icon="@mipmap/ic_launcher"
@@ -106,7 +106,7 @@
                   android:immersive="true"
                   android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
-                <action android:name="com.aoscp.setupwizard.LINEAGE_BLUETOOTH_SETUP" />
+                <action android:name="com.cyanogenmod.setupwizard.LINEAGE_BLUETOOTH_SETUP" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -118,7 +118,7 @@
                   android:immersive="true"
                   android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
-                <action android:name="com.aoscp.setupwizard.LINEAGE_WELCOME" />
+                <action android:name="com.cyanogenmod.setupwizard.LINEAGE_WELCOME" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -130,7 +130,7 @@
                   android:immersive="true"
                   android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
-                <action android:name="com.aoscp.setupwizard.LINEAGE_LOCALE" />
+                <action android:name="com.cyanogenmod.setupwizard.LINEAGE_LOCALE" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -142,7 +142,7 @@
                   android:immersive="true"
                   android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
-                <action android:name="com.aoscp.setupwizard.LINEAGE_DATETIME" />
+                <action android:name="com.cyanogenmod.setupwizard.LINEAGE_DATETIME" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -155,7 +155,7 @@
                   android:exported="false"
                   android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
-                <action android:name="com.aoscp.setupwizard.LINEAGE_WIFI_SETUP" />
+                <action android:name="com.cyanogenmod.setupwizard.LINEAGE_WIFI_SETUP" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -168,7 +168,7 @@
                   android:exported="false"
                   android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
-                <action android:name="com.aoscp.setupwizard.LINEAGE_CAPTIVE_PORTAL_SETUP" />
+                <action android:name="com.cyanogenmod.setupwizard.LINEAGE_CAPTIVE_PORTAL_SETUP" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -181,7 +181,7 @@
                   android:exported="false"
                   android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
-                <action android:name="com.aoscp.setupwizard.LINEAGE_SIM_MISSING" />
+                <action android:name="com.cyanogenmod.setupwizard.LINEAGE_SIM_MISSING" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -194,7 +194,7 @@
                   android:exported="false"
                   android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
-                <action android:name="com.aoscp.setupwizard.LINEAGE_CHOOSE_DATA_SIM" />
+                <action android:name="com.cyanogenmod.setupwizard.LINEAGE_CHOOSE_DATA_SIM" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -207,7 +207,7 @@
                   android:exported="false"
                   android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
-                <action android:name="com.aoscp.setupwizard.LINEAGE_ENABLE_MOBILE_DATA" />
+                <action android:name="com.cyanogenmod.setupwizard.LINEAGE_ENABLE_MOBILE_DATA" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -220,7 +220,7 @@
                   android:exported="false"
                   android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
-                <action android:name="com.aoscp.setupwizard.LINEAGE_LOCATION_SETTINGS" />
+                <action android:name="com.cyanogenmod.setupwizard.LINEAGE_LOCATION_SETTINGS" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -233,7 +233,7 @@
                   android:exported="false"
                   android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
-                <action android:name="com.aoscp.setupwizard.LINEAGE_FINGERPRINT_SETTINGS" />
+                <action android:name="com.cyanogenmod.setupwizard.LINEAGE_FINGERPRINT_SETTINGS" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -246,7 +246,7 @@
                   android:exported="false"
                   android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
-                <action android:name="com.aoscp.setupwizard.LINEAGE_LOCKSCREEN_SETTINGS" />
+                <action android:name="com.cyanogenmod.setupwizard.LINEAGE_LOCKSCREEN_SETTINGS" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -258,7 +258,7 @@
                   android:immersive="true"
                   android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
-                <action android:name="com.aoscp.setupwizard.LINEAGE_SETUP_COMPLETE" />
+                <action android:name="com.cyanogenmod.setupwizard.LINEAGE_SETUP_COMPLETE" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -270,7 +270,7 @@
                   android:label="@@string/activity_label_empty"
                   android:theme="@style/NoDisplay">
             <intent-filter>
-                <action android:name="com.aoscp.setupwizard.EXIT"/>
+                <action android:name="com.cyanogenmod.setupwizard.EXIT"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
