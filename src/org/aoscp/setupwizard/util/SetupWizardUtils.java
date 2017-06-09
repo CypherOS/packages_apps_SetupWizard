@@ -205,6 +205,10 @@ public class SetupWizardUtils {
         return fingerprintManager.isHardwareDetected();
     }
 
+    public static boolean simMissing() {
+        return PhoneMonitor.getInstance().simMissing();
+    }
+
     public static boolean isAppInstalled(final Context context, final String packageName) {
         if (uid == -1) {
             PackageManager pm = context.getPackageManager();
@@ -227,6 +231,9 @@ public class SetupWizardUtils {
             disableComponent(context, SimMissingActivity.class);
             disableComponent(context, ChooseDataSimActivity.class);
         } else if (!SetupWizardUtils.isMultiSimDevice(context)) {
+            disableComponent(context, ChooseDataSimActivity.class);
+        } else if (simMissing()) {
+            disableComponent(context, MobileDataActivity.class);
             disableComponent(context, ChooseDataSimActivity.class);
         }
         if (!SetupWizardUtils.hasWifi(context)) {
