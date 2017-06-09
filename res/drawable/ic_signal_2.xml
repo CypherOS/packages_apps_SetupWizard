@@ -24,6 +24,6 @@
         android:fillColor="#e0e0e0"
         android:pathData="M2.000000,22.000000l20.000000,0.000000 0.000000,-20.000000z"/>
     <path
-        android:fillColor="@color/accent"
+        android:fillColor="@color/color_accent"
         android:pathData="M14.000000,10.000000l-12.000000,12.000000 12.000000,0.000000z"/>
 </vector>

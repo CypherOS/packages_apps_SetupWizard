@@ -31,7 +31,7 @@
         android:scaleType="centerInside"
         android:adjustViewBounds="true"
         android:maxHeight="@dimen/suw_glif_icon_max_height"
-        android:tint="@color/accent" />
+        android:tint="@color/color_accent" />
 
     <TextView
         android:id="@android:id/title"

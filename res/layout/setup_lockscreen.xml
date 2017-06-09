@@ -19,7 +19,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primary">
+    android:background="@color/white">
 
     <include layout="@layout/header_condensed" />
 
@@ -28,37 +28,31 @@
         android:layout_height="0dp"
         android:layout_weight="1">
 
-        <ScrollView android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fillViewport="true">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/suw_layout_margin_sides"
+            android:layout_marginRight="@dimen/suw_layout_margin_sides"
+            style="@style/PageContent">
 
-            <LinearLayout
-                android:orientation="vertical"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingStart="@dimen/content_margin_left"
-                android:paddingEnd="@dimen/content_margin_left"
-                style="@style/PageContent">
+                android:textSize="16sp"
+                android:layout_marginBottom="@dimen/summary_margin_bottom"
+                android:text="@string/lockscreen_setup_summary"
+                style="@style/PageSummaryText" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    style="@style/PageSummaryText"
-                    android:textSize="16sp"
-                    android:layout_marginBottom="@dimen/summary_margin_bottom"
-                    android:paddingRight="@dimen/location_text_margin_right"
-                    android:text="@string/lockscreen_setup_summary" />
+            <Button
+                android:id="@+id/setup_lockscreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="@string/lockscreen_setup_screen_lock_setup"
+                style="@android:style/Widget.Material.Button.Colored" />
 
-                <Button
-                    android:id="@+id/setup_lockscreen"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:text="@string/lockscreen_setup_screen_lock_setup"
-                    style="@android:style/Widget.Material.Button.Colored" />
-
-            </LinearLayout>
-        </ScrollView>
+        </LinearLayout>
     </FrameLayout>
     <fragment android:name="com.android.setupwizard.navigationbar.SetupWizardNavBar"
         android:id="@+id/navigation_bar"

@@ -19,7 +19,7 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="@color/primary">
+              android:background="@color/white">
 
     <include layout="@layout/header_condensed" />
 
@@ -45,8 +45,8 @@
                     android:layout_height="wrap_content"
                     style="@style/PageSummaryText"
                     android:textSize="15sp"
-                    android:paddingLeft="@dimen/content_margin_left"
-                    android:paddingRight="@dimen/content_margin_right"
+                    android:paddingLeft="@dimen/suw_glif_margin_sides"
+                    android:paddingRight="@dimen/suw_glif_margin_sides"
                     android:paddingBottom="@dimen/summary_margin_bottom"
                     android:text="@string/choose_data_sim_summary" />
 

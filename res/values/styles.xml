@@ -36,7 +36,7 @@
 
         <item name="suwItemDescriptionStyle">@style/ItemContainer.Description.Glif</item>
         <item name="suwListItemIconColor">@color/list_item_icon_color</item>
-        <item name="suwMarginSides">@dimen/margin_sides</item>
+        <item name="suwMarginSides">@dimen/suw_layout_margin_sides</item>
     </style>
     
     <style name="Theme.Setup" parent="Theme.Glif.Light">
@@ -54,43 +54,42 @@
     </style>
 	
 	<style name="Animation.WindowAnimation" parent="@android:style/Animation.Activity">
-        <item name="android:activityOpenEnterAnimation">@anim/slide_next_in</item>
-        <item name="android:activityOpenExitAnimation">@anim/slide_next_out</item>
-        <item name="android:activityCloseEnterAnimation">@anim/slide_back_in</item>
-        <item name="android:activityCloseExitAnimation">@anim/slide_back_out</item>
+        <item name="android:activityOpenEnterAnimation">@anim/suw_slide_next_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/suw_slide_next_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/suw_slide_back_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/suw_slide_back_out</item>
     </style>
 	
 	<style name="ItemContainer">
         <item name="android:minHeight">?android:attr/listPreferredItemHeight</item>
         <item name="android:paddingBottom">@dimen/items_padding_vertical</item>
-        <item name="android:paddingEnd" tools:ignore="NewApi">?attr/listPreferredItemPaddingRight</item>
+        <item name="android:paddingEnd">?attr/listPreferredItemPaddingRight</item>
         <item name="android:paddingLeft">?attr/listPreferredItemPaddingLeft</item>
         <item name="android:paddingRight">?attr/listPreferredItemPaddingRight</item>
-        <item name="android:paddingStart" tools:ignore="NewApi">?attr/listPreferredItemPaddingLeft</item>
+        <item name="android:paddingStart">?attr/listPreferredItemPaddingLeft</item>
         <item name="android:paddingTop">@dimen/items_padding_vertical</item>
 		<item name="listPreferredItemPaddingLeft">?attr/suwMarginSides</item>
         <item name="listPreferredItemPaddingRight">?attr/suwMarginSides</item>
     </style>
 	
 	<style name="ItemContainer.Description" parent="ItemContainer">
-        <item name="android:paddingTop">@dimen/description_margin_top</item>
-        <item name="android:paddingBottom">@dimen/description_margin_bottom_lists</item>
+        <item name="android:paddingTop">@dimen/suw_description_glif_margin_top</item>
+        <item name="android:paddingBottom">@dimen/suw_description_glif_margin_bottom_lists</item>
     </style>
 	
 	<style name="ItemContainer.Description.Glif" parent="ItemContainer.Description">
         <item name="android:minHeight">0dp</item>
-        <item name="android:paddingTop">@dimen/description_glif_margin_top</item>
-        <item name="android:paddingBottom">@dimen/description_glif_margin_bottom_lists</item>
+        <item name="android:paddingTop">@dimen/suw_description_glif_margin_top</item>
+        <item name="android:paddingBottom">@dimen/suw_description_glif_margin_bottom_lists</item>
     </style>
 
     <style name="PageContainer">
         <item name="android:textColor">@color/primary_text</item>
-        <item name="android:background">@color/primary</item>
+        <item name="android:background">@color/white</item>
     </style>
 
     <style name="PageContent">
-        <item name="android:background">@color/primary</item>
-        <item name="android:paddingTop">@dimen/content_margin_top</item>
+        <item name="android:background">@color/white</item>
     </style>
 
     <style name="PageTitle">
@@ -106,7 +105,7 @@
 
     <style name="SpinnerItem">
         <item name="android:textSize">15sp</item>
-        <item name="android:paddingLeft">@dimen/content_margin_left</item>
+        <item name="android:paddingLeft">@dimen/suw_glif_margin_sides</item>
     </style>
 
     <style name="ButtonBar" parent="@android:style/Widget.Material.ActionButton">
@@ -117,7 +116,6 @@
         <item name="android:minWidth">15dp</item>
         <item name="android:minHeight">15dp</item>
         <item name="android:textColor">@color/button_bar_text</item>
-        <item name="android:fontFamily">sans-serif</item>
         <item name="android:drawablePadding">6dp</item>
         <item name="android:ellipsize">end</item>
     </style>

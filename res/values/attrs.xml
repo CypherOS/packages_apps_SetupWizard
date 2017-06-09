@@ -32,6 +32,9 @@
         <attr name="internalLayout" format="reference" />
         <attr name="virtualButtonPressedDrawable" format="reference"/>
     </declare-styleable>
-	
-	<attr name="suwMarginSides" format="dimension|reference" />
+
+    <attr name="listPreferredItemPaddingRight" format="dimension" />
+    <attr name="listPreferredItemPaddingLeft" format="dimension" />
+
+    <attr name="suwMarginSides" format="dimension|reference" />
 </resources>
