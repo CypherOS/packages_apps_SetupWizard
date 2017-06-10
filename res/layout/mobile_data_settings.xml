@@ -71,7 +71,7 @@
                     android:id="@+id/signal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_signal_0" />
+                    android:src="@drawable/ic_signal_0_mini" />
 
                 <TextView
                     android:id="@+id/enable_data_title"
