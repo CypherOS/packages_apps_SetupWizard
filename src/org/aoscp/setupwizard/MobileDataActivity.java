@@ -154,7 +154,6 @@ public class MobileDataActivity extends BaseSetupWizardActivity {
         super.onCreate(savedInstanceState);
         mPhoneMonitor = PhoneMonitor.getInstance();
         mNetworkMonitor = NetworkMonitor.getInstance();
-        setNextText(R.string.next);
 
         mProgressBar = (ProgressBar) findViewById(R.id.progress);
         mEnableDataRow = findViewById(R.id.data);
@@ -200,9 +199,6 @@ public class MobileDataActivity extends BaseSetupWizardActivity {
             mHandler.removeCallbacks(mRadioReadyRunnable);
             // Something else, like data enablement, may have grabbed
             // the "hold" status. Kill it only if "Next" is active
-            if (isNextAllowed()) {
-                mProgressBar.setVisibility(View.INVISIBLE);
-            }
         }
     }
 
@@ -212,7 +208,6 @@ public class MobileDataActivity extends BaseSetupWizardActivity {
             mProgressBar.startAnimation(
                     AnimationUtils.loadAnimation(this, R.anim.translucent_enter));
             mEnableDataRow.setEnabled(false);
-            setNextAllowed(false);
             mHandler.postDelayed(mDataConnectionReadyRunnable, DC_READY_TIMEOUT);
         }
     }
@@ -225,7 +220,6 @@ public class MobileDataActivity extends BaseSetupWizardActivity {
                     AnimationUtils.loadAnimation(this, R.anim.translucent_exit));
             mProgressBar.setVisibility(View.INVISIBLE);
             mEnableDataRow.setEnabled(true);
-            setNextAllowed(true);
         }
     }
 

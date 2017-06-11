@@ -150,7 +150,7 @@
             </LinearLayout>
         </ScrollView>
     </FrameLayout>
-    <fragment android:name="com.android.setupwizard.navigationbar.SetupWizardNavBar"
+    <fragment android:name="org.aoscp.setupwizard.util.SetupWizardNavBar"
         android:id="@+id/navigation_bar"
         style="@style/setup_wizard_navbar_style" />
 </LinearLayout>
