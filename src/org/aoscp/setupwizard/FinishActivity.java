@@ -38,6 +38,7 @@ import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.view.ViewAnimationUtils;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -60,6 +61,8 @@ public class FinishActivity extends BaseSetupWizardActivity {
 
     private SetupWizardApp mSetupWizardApp;
 
+    private Button mNext;
+
     private final Handler mHandler = new Handler();
 
     private volatile boolean mIsFinishing = false;
@@ -74,9 +77,19 @@ public class FinishActivity extends BaseSetupWizardActivity {
         mSetupWizardApp = (SetupWizardApp) getApplication();
         mReveal = (ImageView) findViewById(R.id.reveal);
         mFinishingProgressBar = (ProgressBar)findViewById(R.id.finishing_bar);
+        findViewById(R.id.setup_next).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onNavigateNext();
+            }
+        });
         mEnableAccessibilityController =
                 EnableAccessibilityController.getInstance(getApplicationContext());
-        setNextText(R.string.start);
+    }
+
+    @Override
+	public void onNavigateNext() {
+        onNextPressed();
     }
 
     @Override
@@ -95,12 +108,6 @@ public class FinishActivity extends BaseSetupWizardActivity {
         overridePendingTransition(R.anim.translucent_enter, R.anim.translucent_exit);
     }
 
-    @Override
-    public void onNavigateNext() {
-        applyForwardTransition(TRANSITION_ID_NONE);
-        startFinishSequence();
-    }
-
     private void finishSetup() {
         if (!mIsFinishing) {
             mIsFinishing = true;
@@ -111,7 +118,6 @@ public class FinishActivity extends BaseSetupWizardActivity {
     private void startFinishSequence() {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
         hideBackButton();
-        hideNextButton();
         Animation fadeIn = AnimationUtils.loadAnimation(this, android.R.anim.fade_in);
         mFinishingProgressBar.setVisibility(View.VISIBLE);
         mFinishingProgressBar.setIndeterminate(true);
