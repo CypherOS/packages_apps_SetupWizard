@@ -25,9 +25,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@null"
-        android:layout_marginLeft="@dimen/suw_layout_margin_sides"
+        android:layout_marginLeft="@dimen/suw_glif_margin_sides"
         android:layout_marginTop="@dimen/suw_glif_margin_top"
-        android:layout_marginRight="@dimen/suw_layout_margin_sides"
+        android:layout_marginRight="@dimen/suw_glif_margin_sides"
         android:scaleType="centerInside"
         android:adjustViewBounds="true"
         android:maxHeight="@dimen/suw_glif_icon_max_height"
@@ -42,9 +42,9 @@
         android:layout_gravity="top"
         android:maxLines="2"
         android:textColor="?android:textColorPrimary"
-        android:layout_marginLeft="@dimen/suw_layout_margin_sides"
+        android:layout_marginLeft="@dimen/suw_glif_margin_sides"
         android:layout_marginTop="@dimen/suw_glif_header_title_margin_top"
-        android:layout_marginRight="@dimen/suw_layout_margin_sides"
+        android:layout_marginRight="@dimen/suw_glif_margin_sides"
         android:layout_marginBottom="@dimen/suw_glif_header_title_margin_bottom" />
 
 </LinearLayout>
