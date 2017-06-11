@@ -76,7 +76,6 @@ public class FinishActivity extends BaseSetupWizardActivity {
         mFinishingProgressBar = (ProgressBar)findViewById(R.id.finishing_bar);
         mEnableAccessibilityController =
                 EnableAccessibilityController.getInstance(getApplicationContext());
-        setNextText(R.string.start);
     }
 
     @Override
@@ -95,12 +94,6 @@ public class FinishActivity extends BaseSetupWizardActivity {
         overridePendingTransition(R.anim.translucent_enter, R.anim.translucent_exit);
     }
 
-    @Override
-    public void onNavigateNext() {
-        applyForwardTransition(TRANSITION_ID_NONE);
-        startFinishSequence();
-    }
-
     private void finishSetup() {
         if (!mIsFinishing) {
             mIsFinishing = true;
@@ -111,7 +104,6 @@ public class FinishActivity extends BaseSetupWizardActivity {
     private void startFinishSequence() {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
         hideBackButton();
-        hideNextButton();
         Animation fadeIn = AnimationUtils.loadAnimation(this, android.R.anim.fade_in);
         mFinishingProgressBar.setVisibility(View.VISIBLE);
         mFinishingProgressBar.setIndeterminate(true);
