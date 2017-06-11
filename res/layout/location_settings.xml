@@ -36,8 +36,8 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="@dimen/suw_layout_margin_sides"
-                android:layout_marginRight="@dimen/suw_layout_margin_sides"
+                android:layout_marginLeft="@dimen/suw_glif_margin_sides"
+                android:layout_marginRight="@dimen/suw_glif_margin_sides"
                 style="@style/PageContent">
 
                 <TextView
