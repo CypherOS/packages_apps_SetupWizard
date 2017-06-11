@@ -31,4 +31,7 @@
     <color name="divider">#40000000</color>
 
     <color name="list_item_icon_color">#89000000</color>
+	
+	<color name="setup_wizard_navbar_bg_dark">#ff21272b</color>
+    <color name="setup_wizard_navbar_bg_light">#ffe4e7e9</color>
 </resources>
