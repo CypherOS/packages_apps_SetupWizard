@@ -36,7 +36,7 @@
         android:padding="@dimen/suw_glif_margin_sides"/>
 
 
-    <fragment android:name="com.android.setupwizard.navigationbar.SetupWizardNavBar"
+    <fragment android:name="org.aoscp.setupwizard.SetupWizardNavBar"
         android:id="@+id/navigation_bar"
         style="@style/setup_wizard_navbar_style" />
 
