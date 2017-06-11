@@ -15,7 +15,7 @@
      limitations under the License.
 -->
 <resources>
-    <dimen name="suw_glif_margin_top">48dp</dimen>
+    <dimen name="suw_glif_margin_top">72dp</dimen>
     <dimen name="suw_glif_margin_sides">24dp</dimen>
 
     <dimen name="glif_icon_size">32dp</dimen>

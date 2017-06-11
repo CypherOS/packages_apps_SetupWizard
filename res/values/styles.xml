@@ -36,7 +36,7 @@
 
         <item name="suwItemDescriptionStyle">@style/ItemContainer.Description.Glif</item>
         <item name="suwListItemIconColor">@color/list_item_icon_color</item>
-        <item name="suwMarginSides">@dimen/suw_layout_margin_sides</item>
+        <item name="suwMarginSides">@dimen/suw_glif_margin_sides</item>
     </style>
     
     <style name="Theme.Setup" parent="Theme.Glif.Light">
