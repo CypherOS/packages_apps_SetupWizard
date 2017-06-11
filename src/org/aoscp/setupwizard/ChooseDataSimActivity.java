@@ -176,7 +176,6 @@ public class ChooseDataSimActivity extends BaseSetupWizardActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setNextText(R.string.next);
         mPhoneMonitor = PhoneMonitor.getInstance();
         mPageView = (ViewGroup) findViewById(R.id.page_view);
         mProgressBar = (ProgressBar) findViewById(R.id.progress);
@@ -358,7 +357,6 @@ public class ChooseDataSimActivity extends BaseSetupWizardActivity {
     private void enableViews(boolean enabled) {
         mDisabledForSwitch = !enabled;
         enableRows(enabled);
-        setNextAllowed(enabled);
     }
 
     private void enableRows(boolean enabled) {

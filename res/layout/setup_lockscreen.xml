@@ -37,30 +37,39 @@
             style="@style/PageContent">
 
             <TextView
+                android:id="@android:id/summary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
                 android:layout_marginBottom="@dimen/summary_margin_bottom"
                 android:text="@string/lockscreen_setup_summary"
-                style="@style/PageSummaryText" />
+                style="@style/TextAppearance.SuwDescription" />
 				
-			<LinearLayout
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:gravity="right">
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/setup_next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/skip"
+                    android:textColor="@color/color_accent"
+                    style="@android:style/Widget.Material.Button.Borderless" />
 
                 <Button
                     android:id="@+id/setup_lockscreen"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-				    android:layout_gravity="center_vertical"
+                    android:layout_alignParentRight="true"
                     android:text="@string/lockscreen_setup_screen_lock_setup"
                     style="@android:style/Widget.Material.Button.Colored" />
 					
-			</LinearLayout>
+            </RelativeLayout>
         </LinearLayout>
     </FrameLayout>
-    <fragment android:name="com.android.setupwizard.navigationbar.SetupWizardNavBar"
+
+    <fragment android:name="org.aoscp.setupwizard.SetupWizardNavBar"
         android:id="@+id/navigation_bar"
         style="@style/setup_wizard_navbar_style" />
 </LinearLayout>

@@ -19,6 +19,7 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
+              android:gravity="right"
               android:background="@color/white">
 
     <include layout="@layout/header_condensed" />
@@ -40,7 +41,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/date_time_summary"
-                style="@style/TextAppearance.ItemSummary" />
+                style="@style/TextAppearance.SuwDescription" />
 
             <Spinner
                 android:id="@+id/timezone_list"
@@ -63,7 +64,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/setup_current_date"
-                    style="@style/SpinnerItem" />
+                    android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/date_text"
@@ -71,7 +72,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/date_title"
                     android:layout_alignStart="@id/date_title"
-                    style="@style/SpinnerItem" />
+                    android:textSize="15sp" />
             </TwoLineListItem>
 
             <TwoLineListItem
@@ -89,7 +90,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/setup_current_time"
-                    style="@style/SpinnerItem" />
+                    android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/time_text"
@@ -97,12 +98,30 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/time_title"
                     android:layout_alignStart="@id/time_title"
-                    style="@style/SpinnerItem" />
+                    android:textSize="15sp" />
             </TwoLineListItem>
 
         </LinearLayout>
     </FrameLayout>
-    <fragment android:name="com.android.setupwizard.navigationbar.SetupWizardNavBar"
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:layout_below="@id/page"
+		android:gravity="right">
+	
+	    <Button
+            android:id="@+id/setup_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+			android:layout_marginBottom="150dp"
+			android:layout_marginRight="25dp"
+            android:text="@string/next"
+            style="@android:style/Widget.Material.Button.Colored" />
+			
+	</LinearLayout>
+
+    <fragment android:name="org.aoscp.setupwizard.SetupWizardNavBar"
               android:id="@+id/navigation_bar"
               style="@style/setup_wizard_navbar_style" />
 </LinearLayout>

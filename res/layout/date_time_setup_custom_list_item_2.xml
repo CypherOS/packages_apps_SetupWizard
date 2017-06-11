@@ -16,7 +16,7 @@
 -->
 <!-- Based on simple_list_item_2.xml in framework -->
 <TwoLineListItem xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:minHeight="?android:attr/listPreferredItemHeight"
         android:mode="twoLine"
@@ -24,17 +24,17 @@
 
     <TextView
         android:id="@android:id/text1"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:minHeight="16dip"
-        style="@style/SpinnerItem" />
+        android:textSize="15sp" />
 
     <TextView
         android:id="@android:id/text2"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:minHeight="10dip"
         android:layout_below="@android:id/text1"
         android:layout_alignStart="@android:id/text1"
-        style="@style/SpinnerItem" />
+        android:textSize="15sp" />
 </TwoLineListItem>

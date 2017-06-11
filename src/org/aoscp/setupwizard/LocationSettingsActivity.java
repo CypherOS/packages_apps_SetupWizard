@@ -23,6 +23,7 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
@@ -42,6 +43,7 @@ public class LocationSettingsActivity extends BaseSetupWizardActivity {
 
     private ContentResolver mContentResolver;
 
+    private Button mNext;
 
     /** Broadcast intent action when the location mode is about to change. */
     private static final String MODE_CHANGING_ACTION =
@@ -75,7 +77,6 @@ public class LocationSettingsActivity extends BaseSetupWizardActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setNextText(R.string.next);
 
         mContentResolver = getContentResolver();
         TextView summaryView = (TextView) findViewById(android.R.id.summary);
@@ -96,12 +97,23 @@ public class LocationSettingsActivity extends BaseSetupWizardActivity {
         } else {
             networkSummary.setText(R.string.location_network);
         }
+        findViewById(R.id.setup_next).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onNavigateNext();
+            }
+        });
     }
 
     @Override
     public void onResume() {
         super.onResume();
         refreshLocationMode();
+    }
+
+    @Override
+	public void onNavigateNext() {
+        onNextPressed();
     }
 
     @Override

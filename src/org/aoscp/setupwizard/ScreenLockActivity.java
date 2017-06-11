@@ -24,20 +24,33 @@ import static org.aoscp.setupwizard.SetupWizardApp.REQUEST_CODE_SETUP_LOCKSCREEN
 
 import android.content.Intent;
 import android.view.View;
+import android.widget.Button;
 
 public class ScreenLockActivity extends SubBaseActivity {
 
     public static final String TAG = ScreenLockActivity.class.getSimpleName();
 
+    private Button mNext;
+
     @Override
     protected void onStartSubactivity() {
-        setNextAllowed(true);
+        findViewById(R.id.setup_next).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onNavigateNext();
+            }
+        });
         findViewById(R.id.setup_lockscreen).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 launchLockscreenSetup();
             }
         });
+    }
+
+    @Override
+	public void onNavigateNext() {
+        onNextPressed();
     }
 
     @Override
