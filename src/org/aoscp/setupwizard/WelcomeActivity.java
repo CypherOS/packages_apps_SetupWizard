@@ -34,9 +34,6 @@ public class WelcomeActivity extends BaseSetupWizardActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mRootView = findViewById(R.id.root);
-        setNextText(R.string.next);
-        setBackText(R.string.emergency_call);
-        setBackDrawable(null);
         mEnableAccessibilityController =
                 EnableAccessibilityController.getInstance(getApplicationContext());
         mRootView.setOnTouchListener(new View.OnTouchListener() {
@@ -47,14 +44,6 @@ public class WelcomeActivity extends BaseSetupWizardActivity {
                 return consumeIntercept && consumeTouch;
             }
         });
-    }
-
-    @Override
-    public void onBackPressed() {}
-
-    @Override
-    public void onNavigateBack() {
-        startEmergencyDialer();
     }
 
     @Override
