@@ -75,7 +75,6 @@ public class LocationSettingsActivity extends BaseSetupWizardActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setNextText(R.string.next);
 
         mContentResolver = getContentResolver();
         TextView summaryView = (TextView) findViewById(android.R.id.summary);
