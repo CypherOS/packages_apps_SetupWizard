@@ -34,6 +34,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.DatePicker;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
@@ -70,6 +71,7 @@ public class DateTimeActivity extends BaseSetupWizardActivity implements
     private TextView mDateTextView;
     private TextView mTimeTextView;
 
+    private Button mNext;
 
     private final Handler mHandler = new Handler();
 
@@ -83,12 +85,17 @@ public class DateTimeActivity extends BaseSetupWizardActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setNextText(R.string.next);
 
         final Spinner spinner = (Spinner) findViewById(R.id.timezone_list);
         final SimpleAdapter adapter = constructTimezoneAdapter(this, false);
         mCurrentTimeZone = TimeZone.getDefault();
         mDateView = findViewById(R.id.date_item);
+        findViewById(R.id.setup_next).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onNavigateNext();
+            }
+        });
         mDateView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -164,6 +171,11 @@ public class DateTimeActivity extends BaseSetupWizardActivity implements
     public void onPause() {
         super.onPause();
         unregisterReceiver(mIntentReceiver);
+    }
+
+    @Override
+	public void onNavigateNext() {
+        onNextPressed();
     }
 
     @Override

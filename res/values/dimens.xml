@@ -29,6 +29,8 @@
     <dimen name="suw_description_glif_margin_top">3dp</dimen>
     <dimen name="description_glif_margin_bottom_lists_empty">16dp</dimen>
     <dimen name="suw_description_glif_margin_bottom_lists">24dp</dimen>
+    <dimen name="suw_description_margin_bottom">12dp</dimen>
+    <dimen name="suw_description_text_size">16sp</dimen>
 	
 	<dimen name="items_preferred_height">56dp</dimen>
 	<dimen name="items_padding_vertical">15dp</dimen>
@@ -40,4 +42,10 @@
     <dimen name="data_switch_margin_right">30dp</dimen>
     <dimen name="carrier_text_margin_left">15dp</dimen>
     <dimen name="setup_line_spacing">3sp</dimen>
+	
+	<dimen name="setup_wizard_navbar_button_drawable_padding">6dp</dimen>
+    <dimen name="setup_wizard_navbar_button_padding_sides">54dp</dimen>
+    <dimen name="setup_wizard_navbar_height">56dp</dimen>
+    <dimen name="setup_wizard_navbar_ic_intrinsic_size">24dp</dimen>
+    <dimen name="setup_wizard_navbar_padding_sides">24dp</dimen>
 </resources>

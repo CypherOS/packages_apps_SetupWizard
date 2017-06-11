@@ -27,8 +27,8 @@
         <item name="android:listPreferredItemPaddingStart">?attr/suwMarginSides</item>
         <item name="android:navigationBarColor">@android:color/black</item>
         <item name="android:statusBarColor">?android:attr/colorPrimary</item>
-        <item name="android:textAppearanceListItem">@style/TextAppearance.ItemTitle</item>
-        <item name="android:textAppearanceListItemSmall">@style/TextAppearance.ItemSummary</item>
+        <item name="android:textAppearanceListItem">@style/TextAppearance.SuwDescription</item>
+        <item name="android:textAppearanceListItemSmall">@style/TextAppearance.SuwDescription</item>
         <item name="android:textColorLink">@color/color_link</item>
         <item name="android:windowAnimationStyle">@style/Animation.WindowAnimation</item>
         <item name="android:windowDisablePreview">true</item>
@@ -42,15 +42,10 @@
     <style name="Theme.Setup" parent="Theme.Glif.Light">
         <item name="localePickerStyle">@style/LocaleWidget.Material.LocalePicker</item>
     </style>
-	
-	<style name="TextAppearance.ItemTitle" parent="android:TextAppearance">
-        <item name="android:textSize">16sp</item>
-        <item name="android:textColor">?android:attr/textColorPrimary</item>
-    </style>
 
-    <style name="TextAppearance.ItemSummary" parent="android:TextAppearance">
-        <item name="android:textSize">14sp</item>
-        <item name="android:textColor">?android:attr/textColorSecondary</item>
+    <style name="TextAppearance.SuwDescription" parent="android:TextAppearance">
+        <item name="android:textSize">@dimen/suw_description_text_size</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
     </style>
 	
 	<style name="Animation.WindowAnimation" parent="@android:style/Animation.Activity">
@@ -103,11 +98,6 @@
         <item name="android:lineSpacingExtra">@dimen/setup_line_spacing</item>
     </style>
 
-    <style name="SpinnerItem">
-        <item name="android:textSize">15sp</item>
-        <item name="android:paddingLeft">@dimen/suw_glif_margin_sides</item>
-    </style>
-
     <style name="ButtonBar" parent="@android:style/Widget.Material.ActionButton">
         <item name="android:layout_height">56dp</item>
         <item name="android:textSize">16sp</item>
@@ -153,4 +143,35 @@
     </style>
 
     <style name="NoDisplay" parent="@android:style/Theme.NoDisplay" />
+	
+	<attr name="setup_wizard_navbar_theme" format="reference" />
+	
+	<style name="setup_wizard_navbar_theme_dark">
+        <item name="setup_wizard_navbar_bg_color">@color/setup_wizard_navbar_bg_dark</item>
+    </style>
+
+    <style name="setup_wizard_navbar_theme_light">
+        <item name="setup_wizard_navbar_bg_color">@color/setup_wizard_navbar_bg_light</item>
+    </style>
+	
+	<style name="setup_wizard_navbar_style">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_height">@dimen/setup_wizard_navbar_height</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:background">#000000</item>
+        <item name="android:paddingStart">@dimen/setup_wizard_navbar_padding_sides</item>
+        <item name="android:paddingEnd">@dimen/setup_wizard_navbar_padding_sides</item>
+    </style>
+	
+	<style name="setup_wizard_navbar_button_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">0</item>
+        <item name="android:background">@drawable/setup_wizard_navbar_btn_bg</item>
+        <item name="android:drawablePadding">@dimen/setup_wizard_navbar_button_drawable_padding</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:paddingEnd">@dimen/setup_wizard_navbar_button_padding_sides</item>
+        <item name="android:paddingStart">@dimen/setup_wizard_navbar_button_padding_sides</item>
+    </style>
 </resources>
