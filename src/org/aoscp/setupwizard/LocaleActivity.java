@@ -59,6 +59,8 @@ public class LocaleActivity extends BaseSetupWizardActivity {
     private final Handler mHandler = new Handler();
     private boolean mPendingLocaleUpdate;
     private boolean mPaused = true;
+	
+	private Button mNext;
 
     private final Runnable mUpdateLocale = new Runnable() {
         public void run() {
@@ -82,8 +84,13 @@ public class LocaleActivity extends BaseSetupWizardActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setNextText(R.string.next);
         mLanguagePicker = (LocalePicker) findViewById(R.id.locale_list);
+		findViewById(R.id.setup_next).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onNavigateNext();
+            }
+        });
         loadLanguages();
     }
 
@@ -107,6 +114,11 @@ public class LocaleActivity extends BaseSetupWizardActivity {
             mPendingLocaleUpdate = false;
             fetchAndUpdateSimLocale();
         }
+    }
+	
+	@Override
+	public void onNavigateNext() {
+        onNextPressed();
     }
 
     @Override
