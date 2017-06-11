@@ -59,15 +59,6 @@ public class SimMissingActivity extends BaseSetupWizardActivity {
     }
 
     @Override
-    public void onNavigateNext() {
-        if (mPhoneMonitor.simMissing()) {
-            nextAction(ResultCodes.RESULT_SKIP);
-        } else {
-            super.onNavigateNext();
-        }
-    }
-
-    @Override
     protected int getTransition() {
         return TRANSITION_ID_SLIDE;
     }

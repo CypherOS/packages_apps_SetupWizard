@@ -95,12 +95,6 @@ public class FinishActivity extends BaseSetupWizardActivity {
         overridePendingTransition(R.anim.translucent_enter, R.anim.translucent_exit);
     }
 
-    @Override
-    public void onNavigateNext() {
-        applyForwardTransition(TRANSITION_ID_NONE);
-        startFinishSequence();
-    }
-
     private void finishSetup() {
         if (!mIsFinishing) {
             mIsFinishing = true;
