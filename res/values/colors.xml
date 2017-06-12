@@ -27,6 +27,12 @@
     <color name="color_primary">#ff3367d6</color>
     <color name="primary_dark">#c2c5c7</color>
     <color name="primary_text">#8a000000</color>
+	
+    <color name="aoscp_logo_a">#4284F4</color>
+    <color name="aoscp_logo_o">#4BAF4F</color>
+    <color name="aoscp_logo_s">#F24235</color>
+    <color name="aoscp_logo_c">#FDC005</color>
+    <color name="aoscp_logo_p">#7D6EB4</color>
 
     <color name="divider">#40000000</color>
 
