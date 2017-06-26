@@ -17,10 +17,6 @@
 -->
 <resources>
     <color name="black">#21272b</color>
-    <color name="white">#ffffff</color>
-
-    <color name="button_bar_text_enabled">#ff1e1e1e</color>
-    <color name="button_bar_text_disabled">#321e1e1e</color>
 
     <color name="color_accent">#ff4285f4</color>
     <color name="color_link">#ff3367d6</color>
