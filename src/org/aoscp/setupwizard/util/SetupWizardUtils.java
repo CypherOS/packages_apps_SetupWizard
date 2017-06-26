@@ -38,6 +38,7 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.ComponentInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -205,6 +206,22 @@ public class SetupWizardUtils {
         return fingerprintManager.isHardwareDetected();
     }
 
+    public static boolean isAppInstalled(final Context context, final String packageName) {
+        return getApplicationInfo(context, packageName, 0) != null;
+    }
+
+    public static ApplicationInfo getApplicationInfo(final Context context,
+                                                     final String packageName, final int flags) {
+        final PackageManager packageManager = context.getPackageManager();
+        ApplicationInfo info;
+        try {
+            info = packageManager.getApplicationInfo(packageName, flags);
+        } catch (PackageManager.NameNotFoundException e) {
+            info = null;
+        }
+        return info;
+    }
+
     public static void disableComponentsForMissingFeatures(Context context) {
         disableComponent(context, BluetoothSetupActivity.class);
         if (!hasFingerprint(context)) {
@@ -224,7 +241,7 @@ public class SetupWizardUtils {
         // Googles ATV SUW crashes before finishing, leaving devices
         // unprovisioned. Disable it for now.
         if (hasLeanback(context) &&
-            PackageManagerUtils.isAppInstalled(context, GMS_TV_SUW_PACKAGE)) {
+            isAppInstalled(context, GMS_TV_SUW_PACKAGE)) {
             disableApplication(context, GMS_TV_SUW_PACKAGE);
         }
     }
