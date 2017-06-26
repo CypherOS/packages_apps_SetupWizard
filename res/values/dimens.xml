@@ -18,7 +18,7 @@
     <dimen name="suw_glif_margin_top">72dp</dimen>
     <dimen name="suw_glif_margin_sides">24dp</dimen>
 
-    <dimen name="glif_icon_size">32dp</dimen>
+    <dimen name="suw_glif_icon_max_height">32dp</dimen>
 
     <dimen name="suw_glif_header_title_margin_top">15dp</dimen>
     <dimen name="suw_glif_header_title_margin_bottom">2dp</dimen>
@@ -27,15 +27,13 @@
     <dimen name="suw_glif_progress_bar_margin_vertical">7dp</dimen>
 
     <dimen name="suw_description_glif_margin_top">3dp</dimen>
-    <dimen name="description_glif_margin_bottom_lists_empty">16dp</dimen>
     <dimen name="suw_description_glif_margin_bottom_lists">24dp</dimen>
     <dimen name="suw_description_margin_bottom">12dp</dimen>
     <dimen name="suw_description_text_size">16sp</dimen>
 	
 	<dimen name="items_preferred_height">56dp</dimen>
 	<dimen name="items_padding_vertical">15dp</dimen>
-
-    <dimen name="content_margin_top">26dp</dimen>
+	
     <dimen name="content_margin_bottom">20dp</dimen>
 
     <dimen name="summary_margin_bottom">20dp</dimen>
