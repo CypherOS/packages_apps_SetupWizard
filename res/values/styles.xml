@@ -38,6 +38,31 @@
         <item name="suwListItemIconColor">@color/list_item_icon_color</item>
         <item name="suwMarginSides">@dimen/suw_glif_margin_sides</item>
     </style>
+	
+	<style name="SuwGlifIcon">
+		<item name="android:layout_marginLeft">@dimen/suw_glif_margin_sides</item>
+		<item name="android:layout_marginTop">@dimen/suw_glif_margin_top</item>
+		<item name="android:layout_marginRight">@dimen/suw_glif_margin_sides</item>
+		<item name="android:scaleType">centerInside</item>
+		<item name="android:adjustViewBounds">true</item>
+		<item name="android:maxHeight">@dimen/suw_glif_icon_max_height</item>
+		<item name="android:tint">@color/color_accent</item>
+	</style>
+
+	<style name="SuwBaseHeaderTitle">
+		<item name="android:textSize">@dimen/suw_header_title_size</item>
+		<item name="android:ellipsize">end</item>
+		<item name="android:layout_gravity">top</item>
+		<item name="android:maxLines">2</item>
+	</style>
+
+	<style name="SuwGlifHeaderTitle" parent="@style/SuwBaseHeaderTitle">
+		<item name="android:textColor">?android:textColorPrimary</item>
+		<item name="android:layout_marginLeft">@dimen/suw_glif_margin_sides</item>
+		<item name="android:layout_marginTop">@dimen/suw_glif_header_title_margin_top</item>
+		<item name="android:layout_marginRight">@dimen/suw_glif_margin_sides</item>
+		<item name="android:layout_marginBottom">@dimen/suw_glif_header_title_margin_bottom</item>
+	</style>
     
     <style name="Theme.Setup" parent="Theme.Glif.Light">
         <item name="localePickerStyle">@style/LocaleWidget.Material.LocalePicker</item>
@@ -78,48 +103,13 @@
         <item name="android:paddingBottom">@dimen/suw_description_glif_margin_bottom_lists</item>
     </style>
 
-    <style name="PageContainer">
-        <item name="android:textColor">@color/primary_text</item>
-        <item name="android:background">@color/white</item>
-    </style>
-
     <style name="PageContent">
-        <item name="android:background">@color/white</item>
-    </style>
-
-    <style name="PageTitle">
-        <item name="android:id">@android:id/title</item>
-        <item name="android:textSize">20sp</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:background">@android:color/white</item>
     </style>
 
     <style name="PageSummaryText">
         <item name="android:id">@android:id/summary</item>
         <item name="android:lineSpacingExtra">@dimen/setup_line_spacing</item>
-    </style>
-
-    <style name="ButtonBar" parent="@android:style/Widget.Material.ActionButton">
-        <item name="android:layout_height">56dp</item>
-        <item name="android:textSize">16sp</item>
-        <item name="android:textAllCaps">true</item>
-        <item name="android:maxLines">1</item>
-        <item name="android:minWidth">15dp</item>
-        <item name="android:minHeight">15dp</item>
-        <item name="android:textColor">@color/button_bar_text</item>
-        <item name="android:drawablePadding">6dp</item>
-        <item name="android:ellipsize">end</item>
-    </style>
-
-    <style name="ButtonBar.Left">
-        <item name="android:paddingStart">34dp</item>
-        <item name="android:gravity">center_vertical|start</item>
-        <item name="android:drawableLeft">@drawable/ic_chevron_left_dark</item>
-    </style>
-
-    <style name="ButtonBar.Right">
-        <item name="android:paddingEnd">34dp</item>
-        <item name="android:gravity">center_vertical|end</item>
-        <item name="android:drawableRight">@drawable/ic_chevron_right_dark</item>
     </style>
 
     <style name="LocaleWidget">

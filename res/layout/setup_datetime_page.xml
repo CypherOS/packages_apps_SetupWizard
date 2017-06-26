@@ -20,9 +20,9 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:gravity="right"
-              android:background="@color/white">
+              android:background="@android:color/white">
 
-    <include layout="@layout/header_condensed" />
+    <include layout="@layout/suw_glif_header" />
 
     <FrameLayout android:id="@+id/page"
                  android:layout_width="match_parent"
