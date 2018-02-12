@@ -5,7 +5,7 @@ LOCAL_SRC_FILES := $(call all-java-files-under, src)
 
 LOCAL_MODULE_TAGS := optional
 
-LOCAL_PACKAGE_NAME := LineageSetupWizard
+LOCAL_PACKAGE_NAME := AoscpSetupWizard
 LOCAL_CERTIFICATE := platform
 LOCAL_PRIVILEGED_MODULE := true
 LOCAL_OVERRIDES_PACKAGES := Provision
@@ -15,9 +15,7 @@ LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 LOCAL_STATIC_JAVA_LIBRARIES := \
     android-support-v4 \
     android-support-v13 \
-    libphonenumber \
-    org.lineageos.platform.internal \
-    org.lineageos.platform.sdk
+    libphonenumber
 
 LOCAL_JAVA_LIBRARIES := \
     telephony-common
