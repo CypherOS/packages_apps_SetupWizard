@@ -18,8 +18,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="@color/primary">
+              android:layout_height="match_parent">
 
     <include layout="@layout/suw_glif_header" />
 
@@ -45,18 +44,14 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/PageContent">
+                style="@style/SuwContentFrame">
 
                 <TextView
                     android:id="@+id/mobile_data_summary"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/PageSummaryText"
-                    android:textSize="15sp"
-                    android:paddingLeft="@dimen/content_margin_left"
-                    android:paddingRight="@dimen/content_margin_right"
-                    android:paddingBottom="@dimen/summary_margin_bottom"
-                    android:text="@string/enable_mobile_data_summary" />
+                    android:text="@string/enable_mobile_data_summary"
+                    style="@style/SuwDescription.Glif" />
 
                 <include layout="@layout/divider" />
 
@@ -65,11 +60,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:minHeight="?android:attr/listPreferredItemHeight"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="@dimen/content_margin_left"
-                    android:paddingRight="@dimen/data_switch_margin_right"
-                    android:background="?android:attr/selectableItemBackground"
-                    android:clickable="true">
+                    android:gravity="center_vertical">
 
                     <ImageView
                         android:id="@+id/signal"

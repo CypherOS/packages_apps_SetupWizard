@@ -18,8 +18,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="@color/primary">
+              android:layout_height="match_parent">
 
     <include layout="@layout/suw_glif_header" />
 
@@ -36,17 +35,13 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/PageContent">
+                style="@style/SuwContentFrame">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/PageSummaryText"
-                    android:textSize="16sp"
-                    android:paddingLeft="@dimen/content_margin_left"
-                    android:layout_marginBottom="@dimen/summary_margin_bottom"
-                    android:paddingRight="@dimen/location_text_margin_right"
-                    android:text="@string/date_time_summary" />
+                    android:text="@string/date_time_summary"
+                    style="@style/SuwDescription.Glif" />
 
                 <Spinner
                     android:id="@+id/timezone_list"
@@ -77,8 +72,8 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/date_title"
                         android:layout_alignStart="@id/date_title"
-                        android:fontFamily="sans-serif-medium"
                         style="@style/SpinnerItem" />
+
                 </TwoLineListItem>
 
                 <TwoLineListItem
@@ -104,7 +99,6 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/time_title"
                         android:layout_alignStart="@id/time_title"
-                        android:fontFamily="sans-serif-medium"
                         style="@style/SpinnerItem" />
                 </TwoLineListItem>
 

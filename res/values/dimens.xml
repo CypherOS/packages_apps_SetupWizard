@@ -36,5 +36,7 @@
     <dimen name="setup_line_spacing">3sp</dimen>
     <dimen name="min_locale_picker_height">100dp</dimen>
 
+    <!-- GLIF additions -->
     <dimen name="glif_icon_size">32dp</dimen>
+    <dimen name="suw_glif_margin_top">72dp</dimen>
 </resources>
