@@ -75,7 +75,6 @@ public class LocationSettingsActivity extends BaseSetupWizardActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setNextText(R.string.next);
 
         mContentResolver = getContentResolver();
         TextView summaryView = (TextView) findViewById(android.R.id.summary);
@@ -96,6 +95,12 @@ public class LocationSettingsActivity extends BaseSetupWizardActivity {
         } else {
             networkSummary.setText(R.string.location_network);
         }
+        findViewById(R.id.setup_next).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onNavigateNext();
+            }
+        });
     }
 
     @Override
