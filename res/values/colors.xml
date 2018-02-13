@@ -38,4 +38,8 @@
     <color name="aoscp_logo_s">#F24235</color>
     <color name="aoscp_logo_c">#FDC005</color>
     <color name="aoscp_logo_p">#7D6EB4</color>
+
+    <!-- Navigation bar -->
+    <color name="setup_wizard_navbar_bg_dark">#ff21272b</color>
+    <color name="setup_wizard_navbar_bg_light">#ffe4e7e9</color>
 </resources>

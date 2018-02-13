@@ -132,10 +132,27 @@
                         android:maxLines="5" />
 
                 </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/network"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/setup_next"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="@dimen/suw_description_margin_bottom"
+                        android:text="@string/next"
+                        style="@android:style/Widget.Material.Button.Colored" />
+
+                </RelativeLayout>
             </LinearLayout>
         </ScrollView>
     </FrameLayout>
-    <fragment android:name="com.android.setupwizard.navigationbar.SetupWizardNavBar"
+    <fragment android:name="co.aoscp.setupwizard.SetupWizardNavBar"
         android:id="@+id/navigation_bar"
         style="@style/setup_wizard_navbar_style" />
 </LinearLayout>
