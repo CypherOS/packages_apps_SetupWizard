@@ -102,4 +102,25 @@
     </style>
 
     <style name="NoDisplay" parent="@android:style/Theme.NoDisplay" />
+
+    <style name="setup_wizard_navbar_style">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_height">@dimen/setup_wizard_navbar_height</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:background">@android:color/black</item>
+        <item name="android:paddingStart">@dimen/setup_wizard_navbar_padding_sides</item>
+        <item name="android:paddingEnd">@dimen/setup_wizard_navbar_padding_sides</item>
+    </style>
+
+    <style name="setup_wizard_navbar_button_style">
+        <item name="android:layout_width">@dimen/setup_wizard_navbar_button_width</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">0</item>
+        <item name="android:background">@drawable/setup_wizard_navbar_btn_bg</item>
+        <item name="android:drawablePadding">@dimen/setup_wizard_navbar_button_drawable_padding</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:paddingEnd">@dimen/setup_wizard_navbar_button_padding_sides</item>
+        <item name="android:paddingStart">@dimen/setup_wizard_navbar_button_padding_sides</item>
+    </style>
 </resources>
