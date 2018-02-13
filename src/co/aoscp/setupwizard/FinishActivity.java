@@ -69,9 +69,14 @@ public class FinishActivity extends BaseSetupWizardActivity {
         }
         mSetupWizardApp = (SetupWizardApp) getApplication();
         mReveal = (ImageView) findViewById(R.id.reveal);
+        findViewById(R.id.finish_setup).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onNavigateNext();
+            }
+        });
         mEnableAccessibilityController =
                 EnableAccessibilityController.getInstance(getApplicationContext());
-        setNextText(R.string.start);
     }
 
     @Override
@@ -105,8 +110,6 @@ public class FinishActivity extends BaseSetupWizardActivity {
 
     private void startFinishSequence() {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
-        hideBackButton();
-        hideNextButton();
         finishSetup();
     }
 

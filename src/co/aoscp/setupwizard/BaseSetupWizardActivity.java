@@ -51,8 +51,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.android.setupwizard.navigationbar.SetupWizardNavBar;
-import com.android.setupwizard.navigationbar.SetupWizardNavBar.NavigationBarListener;
+import co.aoscp.setupwizard.SetupWizardNavBar;
+import co.aoscp.setupwizard.SetupWizardNavBar.NavigationBarListener;
 import com.android.setupwizardlib.util.SystemBarHelper;
 import com.android.setupwizardlib.util.WizardManagerHelper;
 
@@ -199,69 +199,8 @@ public abstract class BaseSetupWizardActivity extends Activity implements Naviga
         });
     }
 
-    protected void setBackDrawable(Drawable drawable) {
-        if (mNavigationBar != null) {
-            mNavigationBar.getBackButton().setCompoundDrawables(drawable, null, null, null);
-        }
-    }
-
-    protected void setNextDrawable(Drawable drawable) {
-        if (mNavigationBar != null) {
-            mNavigationBar.getBackButton().setCompoundDrawables(null, null, drawable, null);
-        }
-    }
-
-    public void setBackAllowed(boolean allowed) {
-        SystemBarHelper.setBackButtonVisible(getWindow(), allowed);
-        if (mNavigationBar != null) {
-            Button backButton = mNavigationBar.getBackButton();
-            backButton.setEnabled(allowed);
-        }
-    }
-
-    protected boolean isBackAllowed() {
-        if (mNavigationBar != null) {
-            mNavigationBar.getBackButton().isEnabled();
-        }
-        return false;
-    }
-
-    public void setNextAllowed(boolean allowed) {
-        if (mNavigationBar != null) {
-            mNavigationBar.getNextButton().setEnabled(allowed);
-        }
-    }
-
-    protected boolean isNextAllowed() {
-        if (mNavigationBar != null) {
-            mNavigationBar.getNextButton().isEnabled();
-        }
-        return false;
-    }
-
     protected void onNextPressed() {
         nextAction(NEXT_REQUEST);
-    }
-
-    protected void setNextText(int resId) {
-        if (mNavigationBar != null) {
-            mNavigationBar.getNextButton().setText(resId);
-        }
-    }
-
-    protected void setBackText(int resId) {
-        if (mNavigationBar != null) {
-            mNavigationBar.getBackButton().setText(resId);
-        }
-    }
-
-    protected void hideNextButton() {
-        if (mNavigationBar != null) {
-            Animation fadeOut = AnimationUtils.loadAnimation(this, android.R.anim.fade_out);
-            final Button next = mNavigationBar.getNextButton();
-            next.startAnimation(fadeOut);
-            next.setVisibility(View.INVISIBLE);
-        }
     }
 
     protected Intent getResultData() {
@@ -460,15 +399,6 @@ public abstract class BaseSetupWizardActivity extends Activity implements Naviga
             typedArray.recycle();
         } else if (transitionId == TRANSITION_ID_NONE) {
             overridePendingTransition(0, 0);
-        }
-    }
-
-    protected void hideBackButton() {
-        if (mNavigationBar != null) {
-            Animation fadeOut = AnimationUtils.loadAnimation(this, android.R.anim.fade_out);
-            final Button back = mNavigationBar.getBackButton();
-            back.startAnimation(fadeOut);
-            back.setVisibility(View.INVISIBLE);
         }
     }
 
