@@ -85,11 +85,16 @@ public class DateTimeActivity extends BaseSetupWizardActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setNextText(R.string.next);
 
         final Spinner spinner = (Spinner) findViewById(R.id.timezone_list);
         final SimpleAdapter adapter = constructTimezoneAdapter(this, false);
         mCurrentTimeZone = TimeZone.getDefault();
+        findViewById(R.id.setup_next).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onNavigateNext();
+            }
+        });
         mDateView = findViewById(R.id.date_item);
         mDateView.setOnClickListener(new View.OnClickListener() {
             @Override

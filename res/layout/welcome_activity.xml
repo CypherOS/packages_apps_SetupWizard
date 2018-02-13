@@ -16,27 +16,32 @@
      limitations under the License.
 -->
 
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/root"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/brand_logo"
-        android:layout_width="match_parent"
-        android:layout_height="0px"
-        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:src="@drawable/logo"
         android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        android:gravity="center"
-        android:padding="@dimen/content_margin_left"/>
+        android:layout_centerInParent="true" />
+
+    <Button
+        android:id="@+id/start_setup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/brand_logo"
+        android:layout_centerHorizontal="true"
+        android:text="@string/start"
+        style="@android:style/Widget.Material.Button.Colored" />
 
 
-    <fragment android:name="com.android.setupwizard.navigationbar.SetupWizardNavBar"
+    <fragment android:name="co.aoscp.setupwizard.SetupWizardNavBar"
         android:id="@+id/navigation_bar"
         style="@style/setup_wizard_navbar_style" />
 
-</LinearLayout>
+</RelativeLayout>
