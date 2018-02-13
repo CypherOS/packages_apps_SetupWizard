@@ -51,12 +51,6 @@
         <item name="android:paddingTop">@dimen/content_margin_top</item>
     </style>
 
-    <style name="PageTitle">
-        <item name="android:id">@android:id/title</item>
-        <item name="android:textSize">20sp</item>
-        <item name="android:textColor">@color/black</item>
-    </style>
-
     <style name="PageSummaryText">
         <item name="android:id">@android:id/summary</item>
         <item name="android:lineSpacingExtra">@dimen/setup_line_spacing</item>
@@ -113,4 +107,35 @@
     </style>
 
     <style name="NoDisplay" parent="@android:style/Theme.NoDisplay" />
+
+    <style name="SuwGlifHeaderContainer">
+        <item name="android:gravity">start</item>
+    </style>
+
+    <style name="SuwGlifIcon">
+        <item name="android:layout_marginLeft">@dimen/suw_glif_margin_sides</item>
+        <item name="android:layout_marginTop">@dimen/suw_glif_margin_top</item>
+        <item name="android:layout_marginRight">@dimen/suw_glif_margin_sides</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:maxHeight">@dimen/suw_glif_icon_max_height</item>
+    </style>
+
+    <style name="SuwBaseHeaderTitle">
+        <item name="android:textSize">@dimen/suw_header_title_size</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:layout_gravity">top</item>
+        <item name="android:maxLines">2</item>
+    </style>
+
+    <style name="SuwGlifHeaderTitle" parent="@style/SuwBaseHeaderTitle">
+        <item name="android:textColor">?android:textColorPrimary</item>
+        <item name="android:gravity">start</item>
+        <item name="android:layout_marginLeft">@dimen/suw_glif_margin_sides</item>
+        <item name="android:layout_marginTop">@dimen/suw_glif_header_title_margin_top</item>
+        <item name="android:layout_marginRight">@dimen/suw_glif_margin_sides</item>
+        <item name="android:layout_marginBottom">@dimen/suw_glif_header_title_margin_bottom</item>
+        <item name="android:fontFamily">google-sans</item>
+        <item name="android:textAlignment">gravity</item>
+    </style>
 </resources>
