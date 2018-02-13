@@ -37,4 +37,6 @@
     <dimen name="min_locale_picker_height">100dp</dimen>
 
     <dimen name="glif_icon_size">32dp</dimen>
+
+    <dimen name="welcome_button_margin_top">48dp</dimen>
 </resources>
