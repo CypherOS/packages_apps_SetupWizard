@@ -20,6 +20,7 @@ package co.aoscp.setupwizard;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 
 import co.aoscp.setupwizard.util.EnableAccessibilityController;
 
@@ -27,6 +28,7 @@ public class WelcomeActivity extends BaseSetupWizardActivity {
 
     public static final String TAG = WelcomeActivity.class.getSimpleName();
 
+    private Button mStart;
     private View mRootView;
     private EnableAccessibilityController mEnableAccessibilityController;
 
@@ -34,9 +36,12 @@ public class WelcomeActivity extends BaseSetupWizardActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mRootView = findViewById(R.id.root);
-        setNextText(R.string.next);
-        setBackText(R.string.emergency_call);
-        setBackDrawable(null);
+        findViewById(R.id.start_setup).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onNavigateNext();
+            }
+        });
         mEnableAccessibilityController =
                 EnableAccessibilityController.getInstance(getApplicationContext());
         mRootView.setOnTouchListener(new View.OnTouchListener() {
@@ -45,14 +50,6 @@ public class WelcomeActivity extends BaseSetupWizardActivity {
                 return mEnableAccessibilityController.onTouchEvent(event);
             }
         });
-    }
-
-    @Override
-    public void onBackPressed() {}
-
-    @Override
-    public void onNavigateBack() {
-        startEmergencyDialer();
     }
 
     @Override
