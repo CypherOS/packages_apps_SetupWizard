@@ -39,4 +39,11 @@
     <!-- GLIF additions -->
     <dimen name="glif_icon_size">32dp</dimen>
     <dimen name="suw_glif_margin_top">72dp</dimen>
+
+    <!-- Navigation bar -->
+    <dimen name="suw_navbar_height">48dp</dimen>
+    <dimen name="suw_navbar_padding_sides">24dp</dimen>
+    <dimen name="suw_navbar_button_width">70dp</dimen>
+    <dimen name="suw_navbar_button_drawable_padding">6dp</dimen>
+    <dimen name="suw_navbar_button_padding_sides">54dp</dimen>
 </resources>

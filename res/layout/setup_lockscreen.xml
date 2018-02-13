@@ -43,18 +43,34 @@
                     android:text="@string/lockscreen_setup_summary"
                     style="@style/SuwDescription.Glif" />
 
-                <Button
-                    android:id="@+id/setup_lockscreen"
-                    android:layout_width="wrap_content"
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:text="@string/lockscreen_setup_screen_lock_setup"
-                    style="@android:style/Widget.Material.Button.Colored" />
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/setup_next"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/skip"
+                        android:textColor="@color/accent"
+                        style="@android:style/Widget.Material.Button.Borderless" />
+
+                    <Button
+                        android:id="@+id/setup_lockscreen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="@string/lockscreen_setup_screen_lock_setup"
+                        style="@android:style/Widget.Material.Button.Colored" />
+
+                </RelativeLayout>
 
             </LinearLayout>
         </ScrollView>
     </FrameLayout>
-    <fragment android:name="com.android.setupwizard.navigationbar.SetupWizardNavBar"
+    <fragment android:name="co.aoscp.setupwizard.SetupWizardNavBar"
         android:id="@+id/navigation_bar"
         style="@style/setup_wizard_navbar_style" />
 </LinearLayout>

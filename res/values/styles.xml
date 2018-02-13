@@ -102,4 +102,35 @@
     </style>
 
     <style name="NoDisplay" parent="@android:style/Theme.NoDisplay" />
+
+    <attr name="setup_wizard_navbar_theme" format="reference" />
+
+    <style name="setup_wizard_navbar_theme_dark">
+        <item name="setup_wizard_navbar_bg_color">@color/setup_wizard_navbar_bg_dark</item>
+    </style>
+
+    <style name="setup_wizard_navbar_theme_light">
+        <item name="setup_wizard_navbar_bg_color">@color/setup_wizard_navbar_bg_light</item>
+    </style>
+
+    <style name="SuwNavbarStyle">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_height">@dimen/suw_navbar_height</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:background">@android:color/black</item>
+        <item name="android:paddingStart">@dimen/suw_navbar_padding_sides</item>
+        <item name="android:paddingEnd">@dimen/suw_navbar_padding_sides</item>
+    </style>
+
+    <style name="SuwNavbarButtonStyle">
+        <item name="android:layout_width">@dimen/suw_navbar_button_width</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">0</item>
+        <item name="android:background">@drawable/suw_navbar_button_background</item>
+        <item name="android:drawablePadding">@dimen/suw_navbar_button_drawable_padding</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:paddingEnd">@dimen/suw_navbar_button_padding_sides</item>
+        <item name="android:paddingStart">@dimen/suw_navbar_button_padding_sides</item>
+    </style>
 </resources>
