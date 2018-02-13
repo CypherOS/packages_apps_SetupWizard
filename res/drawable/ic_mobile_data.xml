@@ -15,16 +15,16 @@
     limitations under the License.
 -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="24dp"
-    android:height="24dp"
-    android:viewportWidth="24"
-    android:viewportHeight="24">
+    android:width="@dimen/glif_icon_size"
+    android:height="@dimen/glif_icon_size"
+    android:viewportWidth="24.0"
+    android:viewportHeight="24.0">
 
     <path
-        android:fillColor="@color/black"
+        android:fillColor="@color/accent"
         android:fillAlpha=".3"
         android:pathData="M2 22h20V2z" />
     <path
-        android:fillColor="@color/black"
+        android:fillColor="@color/accent"
         android:pathData="M17 7L2 22h15z" />
 </vector>

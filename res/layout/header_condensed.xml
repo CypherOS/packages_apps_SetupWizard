@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2015 The CyanogenMod Project
-     Copyright (C) 2017 The LineageOS Project
+     Copyright (C) 2018 CypherOS
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,33 +14,24 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/header"
-    android:layout_width="match_parent"
-    android:layout_height="@dimen/header_condensed_height"
-    android:paddingTop="48dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    style="@style/SuwGlifHeaderContainer">
 
     <ImageView
         android:id="@+id/header_icon"
-        android:layout_width="64dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
-        android:adjustViewBounds="true"
-        android:scaleType="centerInside"
-        android:visibility="gone"
-        android:contentDescription="@null" />
+        android:contentDescription="@null"
+        style="@style/SuwGlifIcon" />
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:layout_toEndOf="@id/header_icon"
-        android:paddingEnd="8dp"
-        android:typeface="monospace"
-        android:gravity="center_vertical"
-        android:maxLines="1"
-        android:ellipsize="end"
-        style="@style/PageTitle" />
+        android:id="@android:id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        style="@style/SuwGlifHeaderTitle" />
 
-</RelativeLayout>
+</LinearLayout>

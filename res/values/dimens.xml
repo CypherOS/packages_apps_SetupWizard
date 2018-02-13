@@ -35,4 +35,11 @@
     <dimen name="carrier_text_margin_left">15dp</dimen>
     <dimen name="setup_line_spacing">3sp</dimen>
     <dimen name="min_locale_picker_height">100dp</dimen>
+
+    <dimen name="glif_icon_size">32dp</dimen>
+    <dimen name="suw_glif_icon_max_height">32dp</dimen>
+    <dimen name="suw_glif_margin_top">48dp</dimen>
+    <dimen name="suw_glif_margin_sides">24dp</dimen>
+    <dimen name="suw_glif_header_title_margin_bottom">2dp</dimen>
+    <dimen name="suw_header_title_size">24sp</dimen>
 </resources>
